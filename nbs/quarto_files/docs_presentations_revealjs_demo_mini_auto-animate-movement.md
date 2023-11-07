@@ -1,9 +1,0 @@
-## 
-
-Animation
-
-## 
-
-Implicit
-
-Animation
