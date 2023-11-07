@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "hamel"
+  site-url: "https://hamelsmu.github.io/hamel"
+  description: "General Utilities"
+  repo-branch: main
+  repo-url: "https://github.com/hamelsmu/hamel"
