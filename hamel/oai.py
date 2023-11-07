@@ -46,25 +46,30 @@ def _join_url(base, path):
 
 # %% ../nbs/00_oai.ipynb 9
 @call_parse
-def create_openai_plugin_scaffolding():
+def create_openai_plugin_scaffolding(name:str='', # the name of your app for the LLM, ex: `todo`.  By default, this is inferred from the name of your git repo.
+                                     description:str='', # the description of your application that will be read by the LLM.
+                                     url='http://localhost:8000', # The url of your function endpoint. 
+                                     email='', # The email associated with your app.  By default this is inferred by git.
+                                    ):
     "Generate minimal scaffolding for an OpenAI Plugin."
     # Prompt for the application description
-    description = input("Enter the application description: ")
-    url = input("Change the url for the app (default: http://localhost:8000): ")
-    if not url: url = 'http://localhost:8000'
+    if not description: description = input("Enter the application description: ")
+    if not url: 
+        _url = input("Change the url for the app (default: http://localhost:8000): ")
+        if url: url=_url
 
     # Try to infer name_for_model and contact_email from Git config
-    name_for_model = _query_git_config('remote.origin.url')
+    if name: 
+        name_for_model=name
+    else:
+        name_for_model = _query_git_config('remote.origin.url')
+        if name_for_model: print(f"Inferred name of app for model and human as `{name_for_model.split('/')[-1]}`.  Modify .well-known/ai-plugin.json and main.py to change this.")
+        elif not name_for_model: name_for_model = input("Provide the name of your function for the model. (ex `todo`):")
         
-    contact_email = _query_git_config('user.email')
-
-    if name_for_model: print(f"Inferred name of app for model and human as `{name_for_model.split('/')[-1]}`.  Modify .well-known/ai-plugin.json and main.py to change this.")
-    elif not name_for_model:
-        name_for_model = input("Enter the name for the model: ")
+    if not email:
+        email = _query_git_config('user.email')
+        if not email: email = input("Enter the contact email: ")
     
-    if not contact_email:
-        contact_email = input("Enter the contact email: ")
-
     # Write the ai-plugin.json file
     ai_plugin_info = {
         "schema_version": "v1",
@@ -80,7 +85,7 @@ def create_openai_plugin_scaffolding():
             "url": f"{_join_url(url, 'openapi.yaml')}"
         },
         "logo_url": f"{_join_url(url, 'logo.png')}",
-        "contact_email": contact_email,
+        "contact_email": email,
         "legal_info_url": "http://example.com/legal"
     }
 

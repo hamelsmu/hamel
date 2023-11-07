@@ -38,9 +38,19 @@ pip install hamel
 !oai_new_func --help
 ```
 
-    usage: oai_new_func [-h]
+    usage: oai_new_func [-h] [--name NAME] [--description DESCRIPTION] [--url URL]
+                        [--email EMAIL]
 
     Generate minimal scaffolding for an OpenAI Plugin.
 
     options:
-      -h, --help  show this help message and exit
+      -h, --help                 show this help message and exit
+      --name NAME                the name of your app for the LLM, ex: `todo`. By
+                                 default, this is inferred from the name of your git
+                                 repo. (default: )
+      --description DESCRIPTION  the description of your application that will be
+                                 read by the LLM. (default: )
+      --url URL                  The url of your function endpoint. (default:
+                                 http://localhost:8000)
+      --email EMAIL              The email associated with your app. By default this
+                                 is inferred by git. (default: )
