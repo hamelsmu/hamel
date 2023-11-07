@@ -59,16 +59,15 @@ pip install hamel
 !fetch_site --help
 ```
 
-    usage: fetch_site [-h] [--to_html] [--strip_html] url output_dir
+    usage: fetch_site [-h] [--to_html] url output_dir
 
     Fetch content from the specified URL and save it to the given directory. Saves
     the content as a markdown file unless `to_html` is True.
 
     positional arguments:
-      url           The site that you want to fetch documents from
-      output_dir    The output directory to write documents to,
+      url         The site that you want to fetch documents from
+      output_dir  The output directory to write documents to,
 
     options:
-      -h, --help    show this help message and exit
-      --to_html     Write output as HTML instead of markdown. (default: False)
-      --strip_html  Strip HTML out of the markdown. (default: False)
+      -h, --help  show this help message and exit
+      --to_html   Write output as HTML instead of markdown. (default: False)
