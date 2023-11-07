@@ -8,6 +8,7 @@ from datetime import datetime
 import inspect, os, json, subprocess
 import pandas as pd
 from fastcore.script import call_parse
+from fastcore.meta import delegates
 from urllib.parse import urljoin
 
 # %% ../nbs/00_oai.ipynb 4
@@ -15,7 +16,7 @@ def _to_dt(dt:int):
     return datetime.fromtimestamp(dt).strftime('%Y-%m-%d')
 
 @call_parse
-def list_models(owned:str='', # Filter by who models are owned by
+def list_models(owned:str=None, # Filter by who models are owned by
                 limit:int=None # Limit results to the most n created models.
                ):
     "List OpenAI models you have access to."
@@ -46,10 +47,10 @@ def _join_url(base, path):
 
 # %% ../nbs/00_oai.ipynb 9
 @call_parse
-def create_openai_plugin_scaffolding(name:str='', # the name of your app for the LLM, ex: `todo`.  By default, this is inferred from the name of your git repo.
-                                     description:str='', # the description of your application that will be read by the LLM.
+def create_openai_plugin_scaffolding(name:str=None, # the name of your app for the LLM, ex: `todo`.  By default, this is inferred from the name of your git repo.
+                                     description:str=None, # the description of your application that will be read by the LLM.
                                      url='http://localhost:8000', # The url of your function endpoint. 
-                                     email='', # The email associated with your app.  By default this is inferred by git.
+                                     email=None, # The email associated with your app.  By default this is inferred by git.
                                     ):
     "Generate minimal scaffolding for an OpenAI Plugin."
     # Prompt for the application description
