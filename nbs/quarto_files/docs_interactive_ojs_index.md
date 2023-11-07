@@ -1,0 +1,1206 @@
+<a href="../../../index.html"
+class="navbar-brand navbar-brand-logo"><img src="../../../quarto.png"
+class="navbar-logo" alt="Quarto logo." /></a>
+
+<span class="navbar-toggler-icon"></span>
+
+-   <a href="../../../index.html" class="nav-link"><span
+    class="menu-text">Overview</span></a>
+-   <a href="../../../docs/get-started/index.html" class="nav-link"><span
+    class="menu-text">Get Started</span></a>
+-   <a href="../../../docs/guide/index.html" class="nav-link active"
+    aria-current="page"><span class="menu-text">Guide</span></a>
+-   <a href="../../../docs/extensions/index.html" class="nav-link"><span
+    class="menu-text">Extensions</span></a>
+-   <a href="../../../docs/reference/index.html" class="nav-link"><span
+    class="menu-text">Reference</span></a>
+-   <a href="../../../docs/gallery/index.html" class="nav-link"><span
+    class="menu-text">Gallery</span></a>
+-   <a href="../../../docs/blog/index.html" class="nav-link"><span
+    class="menu-text">Blog</span></a>
+-   <a href="#" id="nav-menu-help" class="nav-link dropdown-toggle"
+    role="button" data-bs-toggle="dropdown" aria-expanded="false"><span
+    class="menu-text">Help</span></a>
+    -   <a href="https://github.com/quarto-dev/quarto-cli/issues"
+        class="dropdown-item"><em></em> <span class="dropdown-text">Report a
+        Bug</span></a>
+    -   <a href="https://github.com/quarto-dev/quarto-cli/discussions"
+        class="dropdown-item"><em></em> <span class="dropdown-text">Ask a
+        Question</span></a>
+    -   <a href="../../../docs/faq/index.html" class="dropdown-item"><em></em>
+        <span class="dropdown-text">FAQ</span></a>
+
+<a href="https://twitter.com/quarto_pub"
+class="quarto-navigation-tool px-1" aria-label="Quarto Twitter"
+title="Quarto Twitter"><em></em></a>
+<a href="https://github.com/quarto-dev/quarto-cli"
+class="quarto-navigation-tool px-1" aria-label="Quarto GitHub"
+title="Quarto GitHub"><em></em></a>
+<a href="https://quarto.org/docs/blog/index.xml"
+class="quarto-navigation-tool px-1" aria-label="Quarto Blog RSS"
+title="Quarto Blog RSS"><em></em></a>
+
+1.  [Guide](../../../docs/guide/index.html)
+2.  [Interactivity](../../../docs/interactive/index.html)
+3.  [Observable JS](../../../docs/interactive/ojs/index.html)
+
+<span class="flex-grow-1" role="button" bs-toggle="collapse"
+bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar"
+aria-expanded="false" aria-label="Toggle sidebar navigation"
+onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"></span>
+
+-   <a href="../../../docs/guide/index.html"
+    class="sidebar-item-text sidebar-link"><span
+    class="menu-text">Guide</span></a> <span
+    class="sidebar-item-toggle text-start" bs-toggle="collapse"
+    bs-target="#quarto-sidebar-section-1" aria-expanded="true"
+    aria-label="Toggle section"></span>
+
+    -   <span
+        class="sidebar-item-text sidebar-link text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-2"
+        aria-expanded="false"><span
+        class="menu-text">Authoring</span></span> <span
+        class="sidebar-item-toggle text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-2"
+        aria-expanded="false" aria-label="Toggle section"></span>
+
+        -   <a href="../../../docs/authoring/markdown-basics.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Markdown
+            Basics</span></a>
+
+        -   <a href="../../../docs/authoring/figures.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Figures</span></a>
+
+        -   <a href="../../../docs/authoring/tables.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Tables</span></a>
+
+        -   <a href="../../../docs/authoring/diagrams.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Diagrams</span></a>
+
+        -   <a href="../../../docs/authoring/videos.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Videos</span></a>
+
+        -   <a href="../../../docs/authoring/notebook-embed.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Jupyter
+            Notebooks</span></a>
+
+        -   <a href="../../../docs/authoring/callouts.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Callout
+            Blocks</span></a>
+
+        -   <a href="../../../docs/authoring/code-annotation.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Code
+            Annotation</span></a>
+
+        -   <a href="../../../docs/authoring/article-layout.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Article
+            Layout</span></a>
+
+        -   <span
+            class="sidebar-item-text sidebar-link text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-3"
+            aria-expanded="false"><span class="menu-text">Scholarly
+            Writing</span></span> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-3"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/authoring/front-matter.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Front
+                Matter</span></a>
+
+            -   <a href="../../../docs/authoring/title-blocks.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Title
+                Blocks</span></a>
+
+            -   <a href="../../../docs/authoring/footnotes-and-citations.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Citations
+                &amp; Footnotes</span></a>
+
+            -   <a href="../../../docs/authoring/cross-references.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Cross
+                References</span></a>
+
+            -   <a href="../../../docs/authoring/create-citeable-articles.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Creating
+                Citeable Articles</span></a>
+
+            -   <a href="../../../docs/authoring/appendices.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">Appendices</span></a>
+
+    -   <span
+        class="sidebar-item-text sidebar-link text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-4"
+        aria-expanded="false"><span
+        class="menu-text">Computations</span></span> <span
+        class="sidebar-item-toggle text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-4"
+        aria-expanded="false" aria-label="Toggle section"></span>
+
+        -   <a href="../../../docs/computations/python.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Using
+            Python</span></a>
+
+        -   <a href="../../../docs/computations/r.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Using
+            R</span></a>
+
+        -   <a href="../../../docs/computations/julia.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Using
+            Julia</span></a>
+
+        -   <a href="../../../docs/computations/ojs.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Using
+            Observable</span></a>
+
+        -   <a href="../../../docs/computations/execution-options.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Execution
+            Options</span></a>
+
+        -   <a href="../../../docs/computations/parameters.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Parameters</span></a>
+
+    -   <span
+        class="sidebar-item-text sidebar-link text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-5"
+        aria-expanded="false"><span
+        class="menu-text">Tools</span></span> <span
+        class="sidebar-item-toggle text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-5"
+        aria-expanded="false" aria-label="Toggle section"></span>
+
+        -   <span
+            class="sidebar-item-text sidebar-link text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-6"
+            aria-expanded="false"><span
+            class="menu-text">JupyterLab</span></span> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-6"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/tools/jupyter-lab.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">JupyterLab Basics</span></a>
+
+            -   <a href="../../../docs/tools/jupyter-lab-extension.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">JupyterLab Extension</span></a>
+
+        -   <span
+            class="sidebar-item-text sidebar-link text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-7"
+            aria-expanded="false"><span class="menu-text">RStudio
+            IDE</span></span> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-7"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/tools/rstudio.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">RStudio
+                Basics</span></a>
+
+            -   <a href="../../../docs/visual-editor/index.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Visual
+                Editor</span></a> <span
+                class="sidebar-item-toggle text-start collapsed"
+                bs-toggle="collapse"
+                bs-target="#quarto-sidebar-section-8"
+                aria-expanded="false"
+                aria-label="Toggle section"></span>
+
+                -   <a href="../../../docs/visual-editor/index.html"
+                    class="sidebar-item-text sidebar-link"><span class="menu-text">Editor
+                    Basics</span></a>
+
+                -   <a href="../../../docs/visual-editor/technical.html"
+                    class="sidebar-item-text sidebar-link"><span class="menu-text">Technical
+                    Writing</span></a>
+
+                -   <a href="../../../docs/visual-editor/content.html"
+                    class="sidebar-item-text sidebar-link"><span class="menu-text">Content
+                    Editing</span></a>
+
+                -   <a href="../../../docs/visual-editor/options.html"
+                    class="sidebar-item-text sidebar-link"><span class="menu-text">Shortcuts
+                    &amp; Options</span></a>
+
+                -   <a href="../../../docs/visual-editor/markdown.html"
+                    class="sidebar-item-text sidebar-link"><span class="menu-text">Markdown
+                    Output</span></a>
+
+        -   <a href="../../../docs/tools/vscode.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">VS
+            Code</span></a> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-9"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/tools/vscode.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">VS Code
+                Basics</span></a>
+
+            -   <a href="../../../docs/visual-editor/vscode/index.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Visual
+                Editor</span></a>
+
+            -   <a href="../../../docs/tools/vscode-notebook.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Notebook
+                Editor</span></a>
+
+        -   <a href="../../../docs/tools/neovim.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Neovim</span></a>
+
+        -   <a href="../../../docs/tools/text-editors.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Text
+            Editors</span></a>
+
+    -   <span
+        class="sidebar-item-text sidebar-link text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-10"
+        aria-expanded="false"><span
+        class="menu-text">Documents</span></span> <span
+        class="sidebar-item-toggle text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-10"
+        aria-expanded="false" aria-label="Toggle section"></span>
+
+        -   <span
+            class="sidebar-item-text sidebar-link text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-11"
+            aria-expanded="false"><span
+            class="menu-text">HTML</span></span> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-11"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/output-formats/html-basics.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">HTML
+                Basics</span></a>
+
+            -   <a href="../../../docs/output-formats/html-code.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">HTML Code
+                Blocks</span></a>
+
+            -   <a href="../../../docs/output-formats/html-themes.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">HTML
+                Theming</span></a>
+
+            -   <a href="../../../docs/output-formats/html-multi-format.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Including
+                Other Formats</span></a>
+
+            -   <a href="../../../docs/output-formats/html-publishing.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">Publishing HTML</span></a>
+
+        -   <span
+            class="sidebar-item-text sidebar-link text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-12"
+            aria-expanded="false"><span
+            class="menu-text">PDF</span></span> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-12"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/output-formats/pdf-basics.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">PDF
+                Basics</span></a>
+
+            -   <a href="../../../docs/output-formats/pdf-engine.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">PDF
+                Engines</span></a>
+
+        -   <span
+            class="sidebar-item-text sidebar-link text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-13"
+            aria-expanded="false"><span class="menu-text">MS
+            Word</span></span> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-13"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/output-formats/ms-word.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Word
+                Basics</span></a>
+
+            -   <a href="../../../docs/output-formats/ms-word-templates.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Word
+                Templates</span></a>
+
+        -   <span
+            class="sidebar-item-text sidebar-link text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-14"
+            aria-expanded="false"><span
+            class="menu-text">Markdown</span></span> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-14"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/output-formats/gfm.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">GitHub
+                (GFM)</span></a>
+
+            -   <a href="../../../docs/output-formats/hugo.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">Hugo</span></a>
+
+            -   <a href="../../../docs/output-formats/docusaurus.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">Docusaurus</span></a>
+
+        -   <a href="../../../docs/output-formats/all-formats.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">All
+            Formats</span></a>
+
+    -   <span
+        class="sidebar-item-text sidebar-link text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-15"
+        aria-expanded="false"><span
+        class="menu-text">Presentations</span></span> <span
+        class="sidebar-item-toggle text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-15"
+        aria-expanded="false" aria-label="Toggle section"></span>
+
+        -   <a href="../../../docs/presentations/index.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Overview</span></a>
+
+        -   <a href="../../../docs/presentations/revealjs/index.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Revealjs</span></a> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-16"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/presentations/revealjs/index.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Reveal
+                Basics</span></a>
+
+            -   <a href="../../../docs/presentations/revealjs/presenting.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">Presenting Slides</span></a>
+
+            -   <a href="../../../docs/presentations/revealjs/advanced.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Advanced
+                Reveal</span></a>
+
+            -   <a href="../../../docs/presentations/revealjs/themes.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Reveal
+                Themes</span></a>
+
+        -   <a href="../../../docs/presentations/powerpoint.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">PowerPoint</span></a>
+
+        -   <a href="../../../docs/presentations/beamer.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Beamer</span></a>
+
+    -   <a href="../../../docs/dashboards/index.html"
+        class="sidebar-item-text sidebar-link"><span
+        class="menu-text">Dashboards</span></a> <span
+        class="sidebar-item-toggle text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-17"
+        aria-expanded="false" aria-label="Toggle section"></span>
+
+        -   <a href="../../../docs/dashboards/index.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Overview</span></a>
+
+        -   <a href="../../../docs/dashboards/components.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Using
+            Dashboards</span></a> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-18"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/dashboards/components.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">Components</span></a>
+
+            -   <a href="../../../docs/dashboards/data-presentation.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Data
+                Presentation</span></a>
+
+            -   <a href="../../../docs/dashboards/layouts.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">Layouts</span></a>
+
+            -   <a href="../../../docs/dashboards/theming.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">Theming</span></a>
+
+            -   <a href="../../../docs/dashboards/parameters.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">Parameters</span></a>
+
+            -   <a href="../../../docs/dashboards/deployment.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">Deployment</span></a>
+
+        -   <a href="../../../docs/dashboards/interactivity/shiny-python/index.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Shiny for
+            Python</span></a> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-19"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/dashboards/interactivity/shiny-python/index.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Getting
+                Started</span></a>
+
+            -   <a
+                href="../../../docs/dashboards/interactivity/shiny-python/running.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Running
+                Dashboards</span></a>
+
+            -   <a
+                href="../../../docs/dashboards/interactivity/shiny-python/execution.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Execution
+                Contexts</span></a>
+
+        -   <a href="../../../docs/dashboards/interactivity/shiny-r.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Shiny for
+            R</span></a> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-20"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/dashboards/interactivity/shiny-r.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Getting
+                Started</span></a>
+
+            -   <a href="../../../docs/interactive/shiny/running.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Running
+                Documents</span></a>
+
+            -   <a href="../../../docs/interactive/shiny/execution.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Execution
+                Contexts</span></a>
+
+        -   <a href="../../../docs/dashboards/interactivity/observable.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Observable JS</span></a>
+
+        -   <a href="../../../docs/dashboards/examples/index.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Examples</span></a>
+
+    -   <a href="../../../docs/websites/index.html"
+        class="sidebar-item-text sidebar-link"><span
+        class="menu-text">Websites</span></a> <span
+        class="sidebar-item-toggle text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-21"
+        aria-expanded="false" aria-label="Toggle section"></span>
+
+        -   <a href="../../../docs/websites/index.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Creating
+            a Website</span></a>
+
+        -   <a href="../../../docs/websites/website-navigation.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Website
+            Navigation</span></a>
+
+        -   <a href="../../../docs/websites/website-blog.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Creating
+            a Blog</span></a>
+
+        -   <a href="../../../docs/websites/website-search.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Website
+            Search</span></a>
+
+        -   <a href="../../../docs/websites/website-tools.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Website
+            Tools</span></a>
+
+        -   <a href="../../../docs/websites/website-about.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">About
+            Pages</span></a>
+
+        -   <a href="../../../docs/websites/website-listings.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Listing
+            Pages</span></a> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-22"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/websites/website-listings.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Document
+                Listings</span></a>
+
+            -   <a href="../../../docs/websites/website-listings-custom.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Custom
+                Listings</span></a>
+
+    -   <a href="../../../docs/books/index.html"
+        class="sidebar-item-text sidebar-link"><span
+        class="menu-text">Books</span></a> <span
+        class="sidebar-item-toggle text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-23"
+        aria-expanded="false" aria-label="Toggle section"></span>
+
+        -   <a href="../../../docs/books/index.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Creating
+            a Book</span></a>
+
+        -   <a href="../../../docs/books/book-structure.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Book
+            Structure</span></a>
+
+        -   <a href="../../../docs/books/book-crossrefs.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Book
+            Crossrefs</span></a>
+
+        -   <a href="../../../docs/books/book-output.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Customizing Output</span></a>
+
+    -   <span class="sidebar-item-text sidebar-link text-start"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-24"
+        aria-expanded="true"><span
+        class="menu-text">Interactivity</span></span> <span
+        class="sidebar-item-toggle text-start" bs-toggle="collapse"
+        bs-target="#quarto-sidebar-section-24" aria-expanded="true"
+        aria-label="Toggle section"></span>
+
+        -   <a href="../../../docs/interactive/index.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Overview</span></a>
+
+        -   <a href="../../../docs/interactive/ojs/index.html"
+            class="sidebar-item-text sidebar-link active"><span
+            class="menu-text">Observable JS</span></a> <span
+            class="sidebar-item-toggle text-start" bs-toggle="collapse"
+            bs-target="#quarto-sidebar-section-25" aria-expanded="true"
+            aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/interactive/ojs/index.html"
+                class="sidebar-item-text sidebar-link active"><span
+                class="menu-text">Introduction</span></a>
+
+            -   <a href="../../../docs/interactive/ojs/libraries.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">Libraries</span></a>
+
+            -   <a href="../../../docs/interactive/ojs/data-sources.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Data
+                Sources</span></a>
+
+            -   <a href="../../../docs/interactive/ojs/ojs-cells.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">OJS
+                Cells</span></a>
+
+            -   <a href="../../../docs/interactive/ojs/shiny.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Shiny
+                Reactives</span></a>
+
+            -   <a href="../../../docs/interactive/ojs/code-reuse.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Code
+                Reuse</span></a>
+
+            -   <span
+                class="sidebar-item-text sidebar-link text-start collapsed"
+                bs-toggle="collapse"
+                bs-target="#quarto-sidebar-section-26"
+                aria-expanded="false"><span
+                class="menu-text">Examples</span></span> <span
+                class="sidebar-item-toggle text-start collapsed"
+                bs-toggle="collapse"
+                bs-target="#quarto-sidebar-section-26"
+                aria-expanded="false"
+                aria-label="Toggle section"></span>
+
+                -   <a href="../../../docs/interactive/ojs/examples/penguins.html"
+                    class="sidebar-item-text sidebar-link"><span
+                    class="menu-text">Penguins</span></a>
+
+                -   <a href="../../../docs/interactive/ojs/examples/sunburst.html"
+                    class="sidebar-item-text sidebar-link"><span
+                    class="menu-text">Sunburst</span></a>
+
+                -   <a href="../../../docs/interactive/ojs/examples/arquero.html"
+                    class="sidebar-item-text sidebar-link"><span
+                    class="menu-text">Arquero</span></a>
+
+                -   <a href="../../../docs/interactive/ojs/examples/population.html"
+                    class="sidebar-item-text sidebar-link"><span
+                    class="menu-text">Population</span></a>
+
+                -   <a href="../../../docs/interactive/ojs/examples/noaa-co2.html"
+                    class="sidebar-item-text sidebar-link"><span class="menu-text">NOAA
+                    CO2</span></a>
+
+                -   <a href="../../../docs/interactive/ojs/examples/github.html"
+                    class="sidebar-item-text sidebar-link"><span class="menu-text">GitHub
+                    API</span></a>
+
+                -   <a href="../../../docs/interactive/ojs/examples/layout.html"
+                    class="sidebar-item-text sidebar-link"><span
+                    class="menu-text">Layout</span></a>
+
+                -   <span
+                    class="sidebar-item-text sidebar-link text-start collapsed"
+                    bs-toggle="collapse"
+                    bs-target="#quarto-sidebar-section-27"
+                    aria-expanded="false"><span
+                    class="menu-text">Shiny</span></span> <span
+                    class="sidebar-item-toggle text-start collapsed"
+                    bs-toggle="collapse"
+                    bs-target="#quarto-sidebar-section-27"
+                    aria-expanded="false"
+                    aria-label="Toggle section"></span>
+
+                    -   <a href="https://jjallaire.shinyapps.io/kmeans-shiny-ojs/"
+                        class="sidebar-item-text sidebar-link"><span
+                        class="menu-text">K-Means</span></a>
+
+                    -   <a href="https://jjallaire.shinyapps.io/binning-shiny-ojs/"
+                        class="sidebar-item-text sidebar-link"><span
+                        class="menu-text">Binning</span></a>
+
+                    -   <a href="https://jjallaire.shinyapps.io/data-shiny-ojs/"
+                        class="sidebar-item-text sidebar-link"><span class="menu-text">Data
+                        Binding</span></a>
+
+                    -   <a href="https://jjallaire.shinyapps.io/covid19-bicartogram/"
+                        class="sidebar-item-text sidebar-link"><span class="menu-text">Covid
+                        Map</span></a>
+
+        -   <a href="../../../docs/interactive/shiny/index.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Shiny</span></a> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-28"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/interactive/shiny/index.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">Introduction</span></a>
+
+            -   <a href="../../../docs/interactive/shiny/running.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Running
+                Documents</span></a>
+
+            -   <a href="../../../docs/interactive/shiny/execution.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Execution
+                Contexts</span></a>
+
+            -   <a href="../../../docs/interactive/shiny/resources.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">External
+                Resources</span></a>
+
+            -   <span
+                class="sidebar-item-text sidebar-link text-start collapsed"
+                bs-toggle="collapse"
+                bs-target="#quarto-sidebar-section-29"
+                aria-expanded="false"><span
+                class="menu-text">Examples</span></span> <span
+                class="sidebar-item-toggle text-start collapsed"
+                bs-toggle="collapse"
+                bs-target="#quarto-sidebar-section-29"
+                aria-expanded="false"
+                aria-label="Toggle section"></span>
+
+                -   <a href="https://jjallaire.shinyapps.io/shiny-old-faithful/"
+                    class="sidebar-item-text sidebar-link"><span class="menu-text">Old
+                    Faithful</span></a>
+
+                -   <a href="https://jjallaire.shinyapps.io/shiny-k-means/"
+                    class="sidebar-item-text sidebar-link"><span
+                    class="menu-text">K-Means</span></a>
+
+                -   <a href="https://jjallaire.shinyapps.io/shiny-diamonds/"
+                    class="sidebar-item-text sidebar-link"><span
+                    class="menu-text">Diamonds</span></a>
+
+        -   <span
+            class="sidebar-item-text sidebar-link text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-30"
+            aria-expanded="false"><span
+            class="menu-text">Widgets</span></span> <span
+            class="sidebar-item-toggle text-start collapsed"
+            bs-toggle="collapse" bs-target="#quarto-sidebar-section-30"
+            aria-expanded="false" aria-label="Toggle section"></span>
+
+            -   <a href="../../../docs/interactive/widgets/jupyter.html"
+                class="sidebar-item-text sidebar-link"><span class="menu-text">Jupyter
+                Widgets</span></a>
+
+            -   <a href="../../../docs/interactive/widgets/htmlwidgets.html"
+                class="sidebar-item-text sidebar-link"><span
+                class="menu-text">htmlwidgets for R</span></a>
+
+        -   <a href="../../../docs/interactive/layout.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Component
+            Layout</span></a>
+
+    -   <span
+        class="sidebar-item-text sidebar-link text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-31"
+        aria-expanded="false"><span
+        class="menu-text">Publishing</span></span> <span
+        class="sidebar-item-toggle text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-31"
+        aria-expanded="false" aria-label="Toggle section"></span>
+
+        -   <a href="../../../docs/publishing/index.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Publishing Basics</span></a>
+
+        -   <a href="../../../docs/publishing/quarto-pub.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Quarto
+            Pub</span></a>
+
+        -   <a href="../../../docs/publishing/github-pages.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">GitHub
+            Pages</span></a>
+
+        -   <a href="../../../docs/publishing/rstudio-connect.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Posit
+            Connect</span></a>
+
+        -   <a href="../../../docs/publishing/netlify.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Netlify</span></a>
+
+        -   <a href="../../../docs/publishing/confluence.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Confluence</span></a>
+
+        -   <a href="../../../docs/publishing/other.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Other
+            Services</span></a>
+
+        -   <a href="../../../docs/publishing/ci.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Publishing with CI</span></a>
+
+    -   <span
+        class="sidebar-item-text sidebar-link text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-32"
+        aria-expanded="false"><span
+        class="menu-text">Projects</span></span> <span
+        class="sidebar-item-toggle text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-32"
+        aria-expanded="false" aria-label="Toggle section"></span>
+
+        -   <a href="../../../docs/projects/quarto-projects.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Project
+            Basics</span></a>
+
+        -   <a href="../../../docs/projects/code-execution.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Managing
+            Execution</span></a>
+
+        -   <a href="../../../docs/projects/profiles.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Project
+            Profiles</span></a>
+
+        -   <a href="../../../docs/projects/environment.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Environment Variables</span></a>
+
+        -   <a href="../../../docs/projects/scripts.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Project
+            Scripts</span></a>
+
+        -   <a href="../../../docs/projects/virtual-environments.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Virtual
+            Environments</span></a>
+
+    -   <span
+        class="sidebar-item-text sidebar-link text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-33"
+        aria-expanded="false"><span
+        class="menu-text">Advanced</span></span> <span
+        class="sidebar-item-toggle text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-33"
+        aria-expanded="false" aria-label="Toggle section"></span>
+
+        -   <a href="../../../docs/authoring/includes.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Includes</span></a>
+
+        -   <a href="../../../docs/authoring/variables.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Variables</span></a>
+
+        -   <a href="../../../docs/output-formats/page-layout.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Page
+            Layout</span></a>
+
+        -   <a href="../../../docs/authoring/language.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Document
+            Language</span></a>
+
+        -   <a href="../../../docs/authoring/conditional.html"
+            class="sidebar-item-text sidebar-link"><span
+            class="menu-text">Conditional Content</span></a>
+
+        -   <a href="../../../docs/extensions/nbfilter.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Notebook
+            Filters</span></a>
+
+## On this page
+
+-   <a href="#overview" id="toc-overview" class="nav-link active"
+    data-scroll-target="#overview">Overview</a>
+-   <a href="#example" id="toc-example" class="nav-link"
+    data-scroll-target="#example">Example</a>
+-   <a href="#libraries" id="toc-libraries" class="nav-link"
+    data-scroll-target="#libraries">Libraries</a>
+-   <a href="#data-sources" id="toc-data-sources" class="nav-link"
+    data-scroll-target="#data-sources">Data Sources</a>
+-   <a href="#ojs-cells" id="toc-ojs-cells" class="nav-link"
+    data-scroll-target="#ojs-cells">OJS Cells</a>
+-   <a href="#learning-more" id="toc-learning-more" class="nav-link"
+    data-scroll-target="#learning-more">Learning More</a>
+
+-   <a
+    href="https://github.com/quarto-dev/quarto-web/edit/main/docs/interactive/ojs/index.qmd"
+    class="toc-action"><em></em>Edit this page</a>
+-   <a href="https://github.com/quarto-dev/quarto-cli/issues/new/choose"
+    class="toc-action"><em></em>Report an issue</a>
+
+1.  [Guide](../../../docs/guide/index.html)
+2.  [Interactivity](../../../docs/interactive/index.html)
+3.  [Observable JS](../../../docs/interactive/ojs/index.html)
+
+# Observable JS
+
+## Overview
+
+Quarto includes native support for [Observable
+JS](https://observablehq.com/@observablehq/observables-not-javascript),
+a set of enhancements to vanilla JavaScript created by [Mike
+Bostock](https://en.wikipedia.org/wiki/Mike_Bostock) (also the author of
+[D3](https://d3js.org/)). Observable JS is distinguished by its
+[reactive runtime](https://github.com/observablehq/runtime), which is
+especially well suited for interactive data exploration and analysis.
+
+The creators of Observable JS (Observable, Inc.) run a hosted service at
+<https://observablehq.com/> where you can create and publish notebooks.
+Additionally, you can use Observable JS (“OJS”) in standalone documents
+and websites via its [core libraries](https://github.com/observablehq).
+Quarto uses these libraries along with a
+[compiler](https://github.com/asg017/unofficial-observablehq-compiler/tree/beta)
+that is run at render time to enable the use of OJS within Quarto
+documents.
+
+OJS works in any Quarto document (plain markdown as well as Jupyter and
+Knitr documents). Just include your code in an `{ojs}` executable code
+block. The rest of this article explains the basics of using OJS with
+Quarto.
+
+## Example
+
+We’ll start with a simple example based on Allison Horst’s [Palmer
+Penguins](https://allisonhorst.github.io/palmerpenguins/) dataset. Here
+we look at how penguin body mass varies across both sex and species (use
+the provided inputs to filter the dataset by bill length and island):
+
+    filtered = transpose(data).filter(function(penguin) {
+      return bill_length_min < penguin.bill_length_mm &&
+             islands.includes(penguin.island);
+    })
+
+    viewof bill_length_min = Inputs.range(
+      [32, 50], 
+      {value: 35, step: 1, label: "Bill length (min):"}
+    )
+    viewof islands = Inputs.checkbox(
+      ["Torgersen", "Biscoe", "Dream"], 
+      { value: ["Torgersen", "Biscoe"], 
+        label: "Islands:"
+      }
+    )
+
+    Plot.rectY(filtered, 
+      Plot.binX(
+        {y: "count"}, 
+        {x: "body_mass_g", fill: "species", thresholds: 20}
+      ))
+      .plot({
+        facet: {
+          data: filtered,
+          x: "sex",
+          y: "species",
+          marginRight: 80
+        },
+        marks: [
+          Plot.frame(),
+        ]
+      }
+    )
+
+Let’s take a look at the source code for this example. First we create
+an `{ojs}` cell that reads in some data from a CSV file using a
+[FileAttachment](https://observablehq.com/@observablehq/file-attachments):
+
+    ```{ojs}
+    data = FileAttachment("palmer-penguins.csv").csv({ typed: true })
+    ```
+
+The example above doesn’t plot all of the data but rather a filtered
+subset. To create our filter we’ll need some inputs, and we’ll want to
+be able to use the values of these inputs in our filtering function. To
+do this, we use the `viewof` keyword and with some standard
+[Inputs](https://observablehq.com/@observablehq/inputs):
+
+    ```{ojs}
+    viewof bill_length_min = Inputs.range(
+      [32, 50], 
+      {value: 35, step: 1, label: "Bill length (min):"}
+    )
+    viewof islands = Inputs.checkbox(
+      ["Torgersen", "Biscoe", "Dream"], 
+      { value: ["Torgersen", "Biscoe"], 
+        label: "Islands:"
+      }
+    )
+    ```
+
+Now we write the filtering function that will transform the `data` read
+from the CSV using the values of `bill_length_min` and `island`.
+
+    ```{ojs}
+    filtered = data.filter(function(penguin) {
+      return bill_length_min < penguin.bill_length_mm &&
+             islands.includes(penguin.island);
+    })
+    ```
+
+Here we see reactivity in action: we don’t need any special syntax to
+refer to the dynamic input values, they “just work”, and the filtering
+code is automatically re-run when the inputs change. This works in much
+the same way a spreadsheet works when you update a cell and other cells
+that refer to it are recalculated.
+
+Finally, we’ll plot the filtered data using [Observable
+Plot](https://observablehq.com/@observablehq/plot) (an open-source
+JavaScript library for quick visualization of tabular data):
+
+    ```{ojs}
+    Plot.rectY(filtered, 
+      Plot.binX(
+        {y: "count"}, 
+        {x: "body_mass_g", fill: "species", thresholds: 20}
+      ))
+      .plot({
+        facet: {
+          data: filtered,
+          x: "sex",
+          y: "species",
+          marginRight: 80
+        },
+        marks: [
+          Plot.frame(),
+        ]
+      }
+    )
+    ```
+
+Note that as with our inputs, we refer to the `filtered` variable with
+no special syntax—the plotting code will be automatically re-run
+whenever `filtered` changes (which in turn is updated whenever an input
+changes).
+
+That covers a basic end-to-end use of OJS (see the
+[Penguins](../../../docs/interactive/ojs/examples/penguins.html)
+examples for the full source code).
+
+If you take a look at the
+[Penguins](../../../docs/interactive/ojs/examples/penguins.html) code,
+you’ll notice something curious: the inputs and plotting code are
+defined *before* the data processing code. This demonstrates a critical
+difference between OJS cell execution and traditional notebooks: cells
+do not need to be defined in any particular order.
+
+Because execution is fully reactive, the runtime will automatically
+execute cells in the correct order based on how they reference each
+other. This is more akin to a spreadsheet than a traditional notebook
+with linear cell execution.
+
+## Libraries
+
+Our example above made use of several standard libraries, including:
+
+1.  [Observable stdlib](https://github.com/observablehq/stdlib) — Core
+    primitives for DOM manipulation, file handling, importing code, and
+    much more.
+
+2.  [Observable Inputs](https://github.com/observablehq/inputs) —
+    Standard inputs controls including sliders, drop-downs, tables,
+    check-boxes, etc.
+
+3.  [Observable Plot](https://github.com/observablehq/plot) — High level
+    plotting library for exploratory data visualization.
+
+The libraries are somewhat special because they are automatically
+available within notebooks on <https://observablehq.com> as well as
+within `{ojs}` cells in Quarto documents.
+
+Using other JavaScript libraries is also straightforward, they just need
+to be explicitly imported. For example, here we import a some libraries
+using the [require](https://github.com/observablehq/stdlib#require)
+function (which in turn loads NPM modules from
+<a href="https://www.jsdelivr.com/" class="uri">jsDelivr</a>):
+
+    ```{ojs}
+    d3 = require("d3@7")
+    topojson = require("topojson")
+    ```
+
+See the article on
+[Libraries](../../../docs/interactive/ojs/libraries.html) to learn more
+about using standard and third-party libraries.
+
+## Data Sources
+
+In our initial example we used a
+[FileAttachment](https://github.com/observablehq/stdlib#file-attachments)
+as our data source. File attachments support many formats including CSV,
+TSV, JSON, Arrow (uncompressed), and SQLite so are a convenient way to
+read a dataset that has already been prepared for analysis.
+
+Frequently though you’ll need to do some pre-processing of your data in
+Python or R before it’s ready for visualization. Within Quarto, you can
+do this pre-processing during document render then make the results
+available to OJS.
+
+Use the `ojs_define()` function from Python or R to define variables
+that you want to use within JavaScript. For example, to reproduce the
+simple CSV read in Python you might do this:
+
+    ```{python}
+    import pandas as pd
+    penguins = pd.read_csv("palmer-penguins.csv")
+    ojs_define(data = penguins)
+    ```
+
+The call to `ojs_define(data = penguins)` says that we want to make a
+variable named `data` (with the value of the `penguins` data frame)
+available to OJS
+
+Depending on the visualization library you use, one additional step may
+be required to consume the data from JavaScript. In this case, the
+`Plot` function expects data by row rather than by column, so we
+`transpose()` it before filtering:
+
+    ```{ojs}
+    filtered = transpose(data).filter(function(penguin) {
+      return bill_length_min < penguin.bill_length_mm &&
+             islands.includes(penguin.island);
+    })
+    ```
+
+See the article on [Data
+Sources](../../../docs/interactive/ojs/data-sources.html) to learn more
+about the various ways to prepare and read data.
+
+## OJS Cells
+
+There are many options available to customize the behavior of `{ojs}`
+code cells, including showing, hiding, and collapsing code as well as
+controlling the visibility and layout of outputs.
+
+The most important cell option to be aware of is the `echo` option,
+which controls whether source code is displayed. You’ll have different
+preferences depending on whether you are embedding visualizations in an
+article or creating a notebook or full-on tutorial.
+
+Code in `{ojs}` cells is displayed by default. To prevent display of
+code for an entire document, set the `echo: false` option in YAML
+metadata:
+
+    ---
+    title: "My Document"
+    execute:
+      echo: false
+    ---
+
+You can also specify this option on a per-cell basis. For example:
+
+    ```{ojs}
+    //| echo: false
+    data = FileAttachment("palmer-penguins.csv").csv({ typed: true })
+    ```
+
+To learn about all of the options available, see the article on [OJS
+Cells](../../../docs/interactive/ojs/ojs-cells.html).
+
+## Learning More
+
+These articles go into more depth on using OJS in Quarto documents:
+
+-   [Libraries](../../../docs/interactive/ojs/libraries.html) covers
+    using standard libraries and external JavaScript libraries.
+
+-   [Data Sources](../../../docs/interactive/ojs/data-sources.html)
+    outlines the various ways to read and pre-process data.
+
+-   [OJS Cells](../../../docs/interactive/ojs/ojs-cells.html) goes into
+    more depth on cell execution, output, and layout.
+
+-   [Shiny Reactives](../../../docs/interactive/ojs/shiny.html)
+    describes how to integrate Shiny with OJS.
+
+-   [Code Reuse](../../../docs/interactive/ojs/code-reuse.html) delves
+    into ways to re-use OJS code across multiple documents.
+
+If you want to learn more about the underlying mechanics of reactivity,
+check out these notebooks from [Mike
+Bostock](https://observablehq.com/@mbostock):
+
+-   [Five Minute
+    Introduction](https://observablehq.com/@observablehq/five-minute-introduction)
+
+-   [Observable’s not
+    JavaScript](https://observablehq.com/@observablehq/observables-not-javascript)
+
+-   [Introduction to
+    Views](https://observablehq.com/@observablehq/introduction-to-views)
+
+-   [How Observable
+    Runs](https://observablehq.com/@observablehq/how-observable-runs)
+
+<a href="../../../docs/interactive/index.html"
+class="pagination-link aria-label=" data-overview"=""><em></em> <span
+class="nav-page-text">Overview</span></a>
+
+<a href="../../../docs/interactive/ojs/libraries.html"
+class="pagination-link" aria-label="Libraries"><span
+class="nav-page-text">Libraries</span> <em></em></a>
+
+Proudly supported by [<img
+src="https://www.rstudio.com/assets/img/posit-logo-fullcolor-TM.svg"
+class="img-fluid" width="65" alt="Posit" />](https://posit.co)
+
+-   <a href="../../../about.html" class="nav-link"></a>
+
+    About
+
+-   <a href="../../../docs/faq/index.html" class="nav-link"></a>
+
+    FAQ
+
+-   <a href="../../../license.html" class="nav-link"></a>
+
+    License
+
+-   <a href="../../../trademark.html" class="nav-link"></a>
+
+    Trademark
+
+-   <a href="https://twitter.com/quarto_pub" class="nav-link"><em></em></a>
+-   <a href="https://github.com/quarto-dev/quarto-cli"
+    class="nav-link"><em></em></a>
+-   <a href="https://quarto.org/docs/blog/index.xml"
+    class="nav-link"><em></em></a>

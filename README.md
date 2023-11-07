@@ -54,3 +54,21 @@ pip install hamel
                                  http://localhost:8000)
       --email EMAIL              The email associated with your app. By default this
                                  is inferred by git. (default: )
+
+``` python
+!fetch_site --help
+```
+
+    usage: fetch_site [-h] [--to_markdown] url output_dir
+
+    Fetch content from the specified URL and save it to the given directory. Saves
+    the content as a markdown file if `to_markdown` is True. Otherwise, it saves the
+    content as an HTML file.
+
+    positional arguments:
+      url            The site that you want to fetch documents from
+      output_dir     The output directory to write documents to,
+
+    options:
+      -h, --help     show this help message and exit
+      --to_markdown  Write output as markdown (recommended) (default: False)

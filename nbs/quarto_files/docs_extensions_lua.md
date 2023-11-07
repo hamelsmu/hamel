@@ -1,0 +1,594 @@
+<a href="../../index.html" class="navbar-brand navbar-brand-logo"><img
+src="../../quarto.png" class="navbar-logo" alt="Quarto logo." /></a>
+
+<span class="navbar-toggler-icon"></span>
+
+-   <a href="../../index.html" class="nav-link"><span
+    class="menu-text">Overview</span></a>
+-   <a href="../../docs/get-started/index.html" class="nav-link"><span
+    class="menu-text">Get Started</span></a>
+-   <a href="../../docs/guide/index.html" class="nav-link"><span
+    class="menu-text">Guide</span></a>
+-   <a href="../../docs/extensions/index.html" class="nav-link active"
+    aria-current="page"><span class="menu-text">Extensions</span></a>
+-   <a href="../../docs/reference/index.html" class="nav-link"><span
+    class="menu-text">Reference</span></a>
+-   <a href="../../docs/gallery/index.html" class="nav-link"><span
+    class="menu-text">Gallery</span></a>
+-   <a href="../../docs/blog/index.html" class="nav-link"><span
+    class="menu-text">Blog</span></a>
+-   <a href="#" id="nav-menu-help" class="nav-link dropdown-toggle"
+    role="button" data-bs-toggle="dropdown" aria-expanded="false"><span
+    class="menu-text">Help</span></a>
+    -   <a href="https://github.com/quarto-dev/quarto-cli/issues"
+        class="dropdown-item"><em></em> <span class="dropdown-text">Report a
+        Bug</span></a>
+    -   <a href="https://github.com/quarto-dev/quarto-cli/discussions"
+        class="dropdown-item"><em></em> <span class="dropdown-text">Ask a
+        Question</span></a>
+    -   <a href="../../docs/faq/index.html" class="dropdown-item"><em></em>
+        <span class="dropdown-text">FAQ</span></a>
+
+<a href="https://twitter.com/quarto_pub"
+class="quarto-navigation-tool px-1" aria-label="Quarto Twitter"
+title="Quarto Twitter"><em></em></a>
+<a href="https://github.com/quarto-dev/quarto-cli"
+class="quarto-navigation-tool px-1" aria-label="Quarto GitHub"
+title="Quarto GitHub"><em></em></a>
+<a href="https://quarto.org/docs/blog/index.xml"
+class="quarto-navigation-tool px-1" aria-label="Quarto Blog RSS"
+title="Quarto Blog RSS"><em></em></a>
+
+1.  [Creating Extensions](../../docs/extensions/creating.html)
+2.  [Lua Development](../../docs/extensions/lua.html)
+
+<span class="flex-grow-1" role="button" bs-toggle="collapse"
+bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar"
+aria-expanded="false" aria-label="Toggle sidebar navigation"
+onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"></span>
+
+-   
+
+    ------------------------------------------------------------------------
+
+-   <a href="../../docs/extensions/index.html"
+    class="sidebar-item-text sidebar-link"><span class="menu-text">Quarto
+    Extensions</span></a> <span class="sidebar-item-toggle text-start"
+    bs-toggle="collapse" bs-target="#quarto-sidebar-section-1"
+    aria-expanded="true" aria-label="Toggle section"></span>
+
+    -   <a href="../../docs/extensions/listing-filters.html"
+        class="sidebar-item-text sidebar-link"><span
+        class="menu-text">Shortcodes &amp; Filters</span></a>
+
+    -   <a href="../../docs/extensions/listing-journals.html"
+        class="sidebar-item-text sidebar-link"><span class="menu-text">Journal
+        Articles</span></a>
+
+    -   <a href="../../docs/extensions/listing-formats.html"
+        class="sidebar-item-text sidebar-link"><span class="menu-text">Custom
+        Formats</span></a>
+
+    -   <a href="../../docs/extensions/listing-revealjs.html"
+        class="sidebar-item-text sidebar-link"><span class="menu-text">Revealjs
+        Extensions</span></a>
+
+    -   <a href="../../docs/extensions/managing.html"
+        class="sidebar-item-text sidebar-link"><span class="menu-text">Managing
+        Extensions</span></a>
+
+-   
+
+    ------------------------------------------------------------------------
+
+-   <a href="../../docs/extensions/creating.html"
+    class="sidebar-item-text sidebar-link"><span class="menu-text">Creating
+    Extensions</span></a> <span class="sidebar-item-toggle text-start"
+    bs-toggle="collapse" bs-target="#quarto-sidebar-section-2"
+    aria-expanded="true" aria-label="Toggle section"></span>
+
+    -   <a href="../../docs/extensions/creating.html"
+        class="sidebar-item-text sidebar-link"><span
+        class="menu-text">Overview</span></a>
+
+    -   <a href="../../docs/extensions/lua.html"
+        class="sidebar-item-text sidebar-link active"><span
+        class="menu-text">Lua Development</span></a>
+
+    -   <a href="../../docs/extensions/lua-api.html"
+        class="sidebar-item-text sidebar-link"><span class="menu-text">Lua API
+        Reference</span></a>
+
+    -   <a href="../../docs/extensions/distributing.html"
+        class="sidebar-item-text sidebar-link"><span
+        class="menu-text">Distribution</span></a>
+
+    -   
+
+        ------------------------------------------------------------------------
+
+    -   <a href="../../docs/extensions/shortcodes.html"
+        class="sidebar-item-text sidebar-link"><span
+        class="menu-text">Shortcodes</span></a>
+
+    -   <a href="../../docs/extensions/filters.html"
+        class="sidebar-item-text sidebar-link"><span
+        class="menu-text">Filters</span></a>
+
+    -   <a href="../../docs/journals/formats.html"
+        class="sidebar-item-text sidebar-link"><span class="menu-text">Journal
+        Articles</span></a> <span
+        class="sidebar-item-toggle text-start collapsed"
+        bs-toggle="collapse" bs-target="#quarto-sidebar-section-3"
+        aria-expanded="false" aria-label="Toggle section"></span>
+
+        -   <a href="../../docs/journals/formats.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Journal
+            Formats</span></a>
+
+        -   <a href="../../docs/journals/templates.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Article
+            Templates</span></a>
+
+        -   <a href="../../docs/journals/authors.html"
+            class="sidebar-item-text sidebar-link"><span class="menu-text">Authors
+            &amp; Affiliations</span></a>
+
+    -   <a href="../../docs/extensions/formats.html"
+        class="sidebar-item-text sidebar-link"><span class="menu-text">Custom
+        Formats</span></a>
+
+    -   <a href="../../docs/extensions/revealjs.html"
+        class="sidebar-item-text sidebar-link"><span class="menu-text">Revealjs
+        Plugins</span></a>
+
+    -   <a href="../../docs/extensions/project-types.html"
+        class="sidebar-item-text sidebar-link"><span class="menu-text">Project
+        Types</span></a>
+
+    -   <a href="../../docs/extensions/starter-templates.html"
+        class="sidebar-item-text sidebar-link"><span class="menu-text">Starter
+        Templates</span></a>
+
+## On this page
+
+-   <a href="#overview" id="toc-overview" class="nav-link active"
+    data-scroll-target="#overview">Overview</a>
+-   <a href="#learning-lua" id="toc-learning-lua" class="nav-link"
+    data-scroll-target="#learning-lua">Learning Lua</a>
+-   <a href="#development-tools" id="toc-development-tools" class="nav-link"
+    data-scroll-target="#development-tools">Development Tools</a>
+    -   <a href="#quarto-preview" id="toc-quarto-preview" class="nav-link"
+        data-scroll-target="#quarto-preview">Quarto Preview</a>
+    -   <a href="#vs-code" id="toc-vs-code" class="nav-link"
+        data-scroll-target="#vs-code">VS Code</a>
+-   <a href="#diagnostic-logging" id="toc-diagnostic-logging"
+    class="nav-link" data-scroll-target="#diagnostic-logging">Diagnostic
+    Logging</a>
+    -   <a href="#quarto.log.output" id="toc-quarto.log.output" class="nav-link"
+        data-scroll-target="#quarto.log.output">quarto.log.output</a>
+    -   <a href="#quarto.log.warning" id="toc-quarto.log.warning"
+        class="nav-link"
+        data-scroll-target="#quarto.log.warning">quarto.log.warning</a>
+    -   <a href="#quarto.log.debug" id="toc-quarto.log.debug" class="nav-link"
+        data-scroll-target="#quarto.log.debug">quarto.log.debug</a>
+-   <a href="#native-format" id="toc-native-format" class="nav-link"
+    data-scroll-target="#native-format">Native Format</a>
+-   <a href="#lua-in-vs-code" id="toc-lua-in-vs-code" class="nav-link"
+    data-scroll-target="#lua-in-vs-code">Lua in VS Code</a>
+    -   <a href="#type-hints" id="toc-type-hints" class="nav-link"
+        data-scroll-target="#type-hints">Type Hints</a>
+    -   <a href="#settings" id="toc-settings" class="nav-link"
+        data-scroll-target="#settings">Settings</a>
+
+-   <a
+    href="https://github.com/quarto-dev/quarto-web/edit/main/docs/extensions/lua.qmd"
+    class="toc-action"><em></em>Edit this page</a>
+-   <a href="https://github.com/quarto-dev/quarto-cli/issues/new/choose"
+    class="toc-action"><em></em>Report an issue</a>
+
+1.  [Creating Extensions](../../docs/extensions/creating.html)
+2.  [Lua Development](../../docs/extensions/lua.html)
+
+# Lua Development
+
+## Overview
+
+The programming language used to create
+[filters](../../docs/extensions/filters.html) and
+[shortcodes](../../docs/extensions/shortcodes.html) is Lua, a
+lightweight, high-level scripting language. [Lua](https://www.lua.org/)
+is the extension language for Pandoc (which includes an embedded Lua
+interpreter). This means that Quarto extensions have no additional
+runtime dependencies or requirements.
+
+This article will start by providing an orientation to learning Lua for
+those new to the language. Then, we’ll provide some tips for productive
+Lua development.
+
+See the [Lua API Reference](../../docs/extensions/lua-api.html) for
+additional details on the APIs available for developing extensions.
+
+## Learning Lua
+
+Lua is a scripting language similar to Python, R, Julia, and JavaScript.
+If you are familiar with one or more of those languages you won’t have
+trouble picking up Lua.
+
+Here is a recommended approach for learning Lua for use with Quarto:
+
+1.  Read [Learn Lua in 15
+    Minutes](https://learnxinyminutes.com/docs/lua/) for a quick
+    overview of the language and its syntax.
+
+2.  Check out the first two sections of the [Pandoc Lua
+    Filters](https://pandoc.org/lua-filters.html) documentation then
+    skip ahead to the [Filter
+    Examples](https://pandoc.org/lua-filters.html#macro-substitution)
+    section to make things a bit more concrete.
+
+3.  Once you have the basic idea of Lua and filters, get a more complete
+    picture by skimming the full [Pandoc Lua
+    Filters](https://pandoc.org/lua-filters.html) documentation. You
+    won’t understand everything, but its a good orientation to all of
+    the moving parts.
+
+4.  Finally, check out the source code of the extensions published in
+    the [Quarto Extensions](https://github.com/quarto-ext) GitHub
+    organization (these are extensions maintained by the Quarto core
+    team). Once you are able to read and understand that code you are
+    ready to start developing your own extensions!
+
+Some additional learning resources you might find useful include:
+
+1.  [Lua Quick Reference](luarefv51.pdf), a PDF with a compact summary
+    of the language and base library.
+
+2.  [Programming in
+    Lua](https://www.amazon.com/exec/obidos/ASIN/8590379868/lua-pilindex-20),
+    a book by Roberto Ierusalimschy, the chief architect of the
+    language.
+
+3.  [Lua Reference Manual](https://www.lua.org/manual/5.3/), a complete
+    definition of the language and base library.
+
+## Development Tools
+
+### Quarto Preview
+
+Quarto preview, `quarto preview`, is aware of Lua source files within
+extensions, and will automatically reload the preview whenever a Lua
+source file changes.
+
+This makes it very easy to incrementally develop and debug Lua code
+(especially when combined with the [native](#native-format) format a
+described below). Live reloading for Lua files will work no matter what
+source code editor you are using (VS Code, RStudio, Neovim, etc.).
+
+### VS Code
+
+While you can use any text editor along with `quarto preview` for
+developing Lua extensions, we strongly recommend that you consider using
+VS Code, as it provides a number of additional tools including:
+
+1.  Code completion and type checking.
+
+2.  Diagnostics for various common problems with code.
+
+3.  The ability to add types to your own functions.
+
+Code completion covers the Lua base library as well as the Pandoc and
+Quarto Lua APIs, and also provides documentation on hover:
+
+<img src="images/vscode-lua-completions.png" class="border img-fluid"
+style="width:95.0%"
+alt="Screenshot of Lua file open in VS Code with code completion popup showing for Lua function." />
+
+Diagnostics check for many common errors including failing to check for
+`nil`, undefined global values, shadowing of local variables, unused
+functions, etc.
+
+<img src="images/vscode-lua-diagnostics.png" class="border img-fluid"
+style="width:95.0%"
+alt="Screenshot of Lua file open in VS Code with diagnostic errors shown in Problems pane below the code editor." />
+
+#### Installation
+
+To get started with using VS Code for Lua extension development, install
+the following software:
+
+1.  Install the latest version (v1.2 or greater) of
+    [Quarto](https://quarto.org/docs/download/)
+
+2.  Install the latest version (v1.40.0 or greater) of the [Quarto VS
+    Code
+    Extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto).
+
+3.  For Lua code intelligence, install the [Lua LSP VS Code
+    Extension](https://marketplace.visualstudio.com/items?itemName=sumneko.lua).
+
+Once you’ve installed these components you should see the features
+described above appear automatically in your Quarto workspaces that
+include Lua code.
+
+There are many options available for configuring Lua completion and
+diagnostics. It’s also possible to provide type information for your own
+functions. See the section on [Lua in VS Code](#lua-in-vs-code) below
+for details.
+
+## Diagnostic Logging
+
+Use the functions in the `quarto.log` module to add diagnostic logging
+to your extension. You can use both temporary logging calls to debug a
+particular problem as well as add logging calls that are always present
+but only activated when the `--trace` flag is passed to `quarto render`
+or `quarto preview`.
+
+The `quarto.log` module is based on the
+[pandoc-lua-logging](https://github.com/wlupton/pandoc-lua-logging)
+project from [@wlupton](https://github.com/wlupton). You’ll recognize
+the functions described below from that module (e.g. `logging.output()`,
+`logging.warning()`, etc). For documentation on using all of the logging
+functions see the project
+[README](https://github.com/wlupton/pandoc-lua-logging) file.
+
+### quarto.log.output
+
+To log any object (including Pandoc AST elements), you the
+`quarto.log.output()` function. For example, here we log the `Div`
+passed to us in our filter callback function as well as some diagnostic
+text:
+
+    filter.lua
+
+    function Header(el)
+      quarto.log.output("=== Handling Header ===")
+      quarto.log.output(el)
+    end
+
+This is log output you’d see in the terminal when the filter is
+executed:
+
+    === Handling Header ===
+    Header {
+      attr: Attr {
+        attributes: AttributeList {}
+        classes: List {}
+        identifier: "section-one"
+      }
+      content: Inlines {
+        [1] Str "Section"
+        [2] Space
+        [3] Str "One"
+      }
+      level: 2
+    }
+
+### quarto.log.warning
+
+Use the `quarto.log.warning()` function to output warnings that can be
+suppressed with the `--quiet` flag:
+
+    filter.lua
+
+    function RawBlock(el)
+      if el.format == "html" then
+        quarto.log.warning("Raw HTML not supported")
+        return pandoc.Null()
+      end
+    end
+
+For example, the warning above will not appear for this call to
+`quarto render`:
+
+    quarto render document.qmd --quiet
+
+### quarto.log.debug
+
+Use the `quarto.log.debug()` function to write output whenever the
+`--trace` flag is present:
+
+    filter.lua
+
+    function Header(el)
+      quarto.log.debug("Header: " .. el.identifier)
+    end
+
+For example, the debug message will appear for this call to
+`quarto preview`:
+
+    quarto preview document.qmd --trace
+
+You can keep these calls in your filter since they won’t produce output
+unless `--trace` is specified.
+
+## Native Format
+
+A great tool for understanding the behavior of a Lua filter or shortcode
+in more depth is to target the `native` format (as opposed to `html`,
+`pdf`, etc.). The `native` format will show you the raw contents of the
+Pandoc AST. For example, here’s a simple markdown document alongside
+it’s `native` output:
+
+    document.qmd
+
+    ---
+    format: native
+    ---
+
+    ## Heading
+
+    Some text below
+
+    Pandoc
+      Meta
+        { unMeta = fromList [] }
+      [ Header
+          2
+          ( "heading" , [] , [] )
+          [ Str "Heading" ]
+      , Para
+          [ Str "Some"
+          , Space
+          , Str "text"
+          , Space
+          , Str "below"
+          ]
+      ]
+
+Here we add a simple filter to the document that wraps all headers in
+`pandoc.Emph` (italics). You can see that the `Emph` AST element now
+wraps the heading text in the `native` output:
+
+    document.qmd
+
+    ---
+    format: native
+    filters: [filter.lua]
+    ---
+
+    ## Heading
+
+    Some text below
+
+    filter.lua
+
+    function Header(el)
+      el.content = { 
+        pandoc.Emph(el.content)
+      }
+      return el
+    end
+
+Pandoc  
+  Meta  
+    { unMeta = fromList \[\] }  
+  \[ Header  
+      2  
+      ( “heading” , \[\] , \[\] )  
+      **\[ Emph \[ Str “Heading” \]**  
+      \]  
+  , Para  
+      \[ Str “Some”  
+      , Space  
+      , Str “text”  
+      , Space  
+      , Str “below”  
+      \]  
+  \]  
+  
+  
+
+## Lua in VS Code
+
+### Type Hints
+
+While Quarto provides type information for the Pandoc and Quarto Lua
+APIs, this doesn’t cover functions that you write within your own
+extensions. You can however add type information using
+[Annotations](https://github.com/sumneko/lua-language-server/wiki/Annotations).
+For example, here we indicate that a function takes a `string` and a
+`pandoc.List()` and returns either a `pandoc.List()` or `nil`:
+
+    ---@param text string
+    ---@param blocks pandoc.List
+    ---@return pandoc.List|nil
+    function check_for_text(text, blocks)
+      -- implementation
+    end
+
+With these type declarations, any attempt to call the function without
+the correct types will result in a diagnostic message. Further, if a
+caller fails to check for `nil` before using the return value a
+diagnostic will also occur.
+
+You can learn more about all of the available type annotations in the
+[Annotations
+Reference](https://github.com/sumneko/lua-language-server/wiki/Annotations)
+for the Lua Language Server.
+
+### Settings
+
+The [Lua Language
+Server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)
+extension includes a wide variety of options to customize its behavior
+(e.g. what diagnostics to show, which completions to offer, etc.).
+
+All of the available options are documented in the [Settings
+Reference](https://github.com/sumneko/lua-language-server/wiki/Settings)
+for the Lua Language Server.
+
+Quarto provides a default configuration file (`.luarc.json`) within the
+root of any workspace that includes Quarto Lua extensions. This file is
+necessary because it provides a reference to the Lua type definitions
+for Pandoc and Quarto within your currently installed version of Quarto.
+Without it, the Lua extension wouldn’t know anything about Quarto and
+would report errors for “unknown” Pandoc modules.
+
+If, for example, Quarto is installed at `/opt/quarto/`, the default
+contents of the configuration file will be:
+
+    .luarc.json
+
+    {
+      "Generator": ["Quarto"],
+      "Lua.runtime.version": "Lua 5.3",
+      "Lua.workspace.checkThirdParty": false,
+      "Lua.workspace.library": ["/opt/quarto/share/lua-types"],
+      "Lua.runtime.plugin": "/opt/quarto/share/lua-plugin/plugin.lua",
+      "Lua.completion.showWord": "Disable",
+      "Lua.completion.keywordSnippet": "Both",
+      "Lua.diagnostics.disable": ["lowercase-global", "trailing-space"]
+    }
+
+The `.luarc.json` file will also be automatically added to `.gitignore`
+since it points to the absolute path of Quarto on the local system.
+
+You can change any of the settings within this file save for the
+`Lua.workspace.library` and `Lua.runtime.plugin` (these are
+automatically maintained by the Quarto extension based on where Quarto
+is installed). See the [Settings
+Reference](https://github.com/sumneko/lua-language-server/wiki/Settings)
+for all available settings.
+
+If you prefer to mange this file manually, simply remove the `Generator`
+key and Quarto will no longer update the `Lua.workspace.library` and
+`Lua.runtime.plugin` settings automatically.
+
+You can also globally disable the automatic creation of `.luarc.json`
+using the **Quarto &gt; Lua: Provide Types** VS Code setting.
+
+<a href="../../docs/extensions/creating.html"
+class="pagination-link aria-label=" data-creating=""
+data-extensions"=""><em></em> <span class="nav-page-text">Creating
+Extensions</span></a>
+
+<a href="../../docs/extensions/lua-api.html" class="pagination-link"
+aria-label="Lua API Reference"><span class="nav-page-text">Lua API
+Reference</span> <em></em></a>
+
+Proudly supported by [<img
+src="https://www.rstudio.com/assets/img/posit-logo-fullcolor-TM.svg"
+class="img-fluid" width="65" alt="Posit" />](https://posit.co)
+
+-   <a href="../../about.html" class="nav-link"></a>
+
+    About
+
+-   <a href="../../docs/faq/index.html" class="nav-link"></a>
+
+    FAQ
+
+-   <a href="../../license.html" class="nav-link"></a>
+
+    License
+
+-   <a href="../../trademark.html" class="nav-link"></a>
+
+    Trademark
+
+-   <a href="https://twitter.com/quarto_pub" class="nav-link"><em></em></a>
+-   <a href="https://github.com/quarto-dev/quarto-cli"
+    class="nav-link"><em></em></a>
+-   <a href="https://quarto.org/docs/blog/index.xml"
+    class="nav-link"><em></em></a>

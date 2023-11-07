@@ -65,7 +65,7 @@ def create_openai_plugin_scaffolding(name:str=None, # the name of your app for t
     else:
         name_for_model = _query_git_config('remote.origin.url')
         if name_for_model: print(f"Inferred name of app for model and human as `{name_for_model.split('/')[-1]}`.  Modify .well-known/ai-plugin.json and main.py to change this.")
-        elif not name_for_model: name_for_model = input("Provide the name of your function for the model. (ex `todo`):")
+        else: name_for_model = input("Provide the name of your function for the model. (ex `todo`):")
         
     if not email:
         email = _query_git_config('user.email')
