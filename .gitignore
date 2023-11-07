@@ -2,6 +2,7 @@ _docs/
 _proc/
 quarto_data/
 _quarto_data/
+_quarto_files/
 
 *.bak
 .gitattributes
