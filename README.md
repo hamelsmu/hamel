@@ -47,28 +47,27 @@ pip install hamel
       -h, --help                 show this help message and exit
       --name NAME                the name of your app for the LLM, ex: `todo`. By
                                  default, this is inferred from the name of your git
-                                 repo. (default: )
+                                 repo.
       --description DESCRIPTION  the description of your application that will be
-                                 read by the LLM. (default: )
+                                 read by the LLM.
       --url URL                  The url of your function endpoint. (default:
                                  http://localhost:8000)
       --email EMAIL              The email associated with your app. By default this
-                                 is inferred by git. (default: )
+                                 is inferred by git.
 
 ``` python
 !fetch_site --help
 ```
 
-    usage: fetch_site [-h] [--to_markdown] url output_dir
+    usage: fetch_site [-h] [--to_html] url output_dir
 
     Fetch content from the specified URL and save it to the given directory. Saves
-    the content as a markdown file if `to_markdown` is True. Otherwise, it saves the
-    content as an HTML file.
+    the content as a markdown file unless `to_html` is True.
 
     positional arguments:
-      url            The site that you want to fetch documents from
-      output_dir     The output directory to write documents to,
+      url         The site that you want to fetch documents from
+      output_dir  The output directory to write documents to,
 
     options:
-      -h, --help     show this help message and exit
-      --to_markdown  Write output as markdown (recommended) (default: False)
+      -h, --help  show this help message and exit
+      --to_html   Write output as HTML instead of markdown. (default: False)

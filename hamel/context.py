@@ -5,7 +5,7 @@ __all__ = ['fetch_site_from_sitemap']
 
 # %% ../nbs/01_context.ipynb 2
 import os, re, requests
-from fastcore.script import call_parse
+from fastcore.script import call_parse, store_true, Param
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.parse import urlparse, urljoin
 import pandoc
@@ -57,14 +57,12 @@ def _fetch_and_save(url:str, output_dir:str, to_markdown:bool):
 @call_parse
 def fetch_site_from_sitemap(url:str, # The site that you want to fetch documents from 
                             output_dir:str, # The output directory to write documents to, 
-                            to_markdown:bool=True # Write output as markdown (recommended)
+                            to_html:Param('Write output as HTML instead of markdown.', store_true)
                            ) :
     """
-    Fetch content from the specified URL and save it to the given directory.
-
-    Saves the content as a markdown file if `to_markdown` is True. Otherwise, it saves the content as an HTML file. 
+    Fetch content from the specified URL and save it to the given directory. Saves the content as a markdown file unless `to_html` is True. 
     """
-    
+    to_markdown = not to_html # i was too lazy to refactor
     if not url.endswith('/sitemap.xml'):
         url = urljoin(url, '/sitemap.xml')
 

@@ -3,3 +3,4 @@ website:
     contents:
       - index.ipynb
       - 00_oai.ipynb
+      - 01_context.ipynb
