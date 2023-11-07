@@ -10,12 +10,13 @@ import pandas as pd
 from fastcore.script import call_parse
 from urllib.parse import urljoin
 
-# %% ../nbs/00_oai.ipynb 4
+# %% ../nbs/00_oai.ipynb 3
 def _to_dt(dt:int):
     return datetime.fromtimestamp(dt).strftime('%Y-%m-%d')
 
 @call_parse
-def list_models(owned:str='' # Filter by who models are owned by
+def list_models(owned:str='', # Filter by who models are owned by
+                limit:int=None # Limit results to the most n created models.
                ):
     "List OpenAI models you have access to."
     from openai import OpenAI
@@ -23,12 +24,13 @@ def list_models(owned:str='' # Filter by who models are owned by
     models = list(client.models.list())
     models.sort(key=lambda m: -m.created)
     models = [{'Name': m.id, 'Created Dt': _to_dt(m.created)} for m in models if not owned or owned in m.owned_by]
+    if limit: models = models[:limit]
     df = pd.DataFrame(models)
     stack_depth = len(inspect.stack())
     if stack_depth > 3: return df
     else: return df.to_markdown(index=False)
 
-# %% ../nbs/00_oai.ipynb 6
+# %% ../nbs/00_oai.ipynb 5
 def _query_git_config(key: str):
     try:
         result = subprocess.check_output(['git', 'config', '--get', key])
@@ -38,14 +40,16 @@ def _query_git_config(key: str):
     except subprocess.CalledProcessError:
         return None
 
-# %% ../nbs/00_oai.ipynb 8
+# %% ../nbs/00_oai.ipynb 7
 def _join_url(base, path):
     if not base.endswith('/'):
         base += '/'
     return urljoin(base, path)
 
-# %% ../nbs/00_oai.ipynb 9
+# %% ../nbs/00_oai.ipynb 8
+@call_parse
 def create_openai_plugin_scaffolding():
+    "Generate minimal scaffolding for an OpenAI Plugin."
     # Prompt for the application description
     description = input("Enter the application description: ")
     url = input("Change the url for the app (default: http://localhost:8000): ")

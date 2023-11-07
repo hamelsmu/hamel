@@ -13,10 +13,35 @@ pip install hamel
 
 ## How to use
 
-Fill me in please! Don’t forget code examples:
-
 ``` python
-1+1
+!oai_list_models --owned openai --limit 15
 ```
 
-    2
+    | Name                    | Created Dt   |
+    |:------------------------|:-------------|
+    | gpt-4                   | 2023-06-27   |
+    | gpt-4-0314              | 2023-06-27   |
+    | gpt-4-0613              | 2023-06-12   |
+    | gpt-3.5-turbo-0613      | 2023-06-12   |
+    | gpt-3.5-turbo-16k-0613  | 2023-05-30   |
+    | gpt-3.5-turbo-16k       | 2023-05-10   |
+    | tts-1                   | 2023-04-19   |
+    | gpt-3.5-turbo-0301      | 2023-02-28   |
+    | gpt-3.5-turbo           | 2023-02-28   |
+    | whisper-1               | 2023-02-27   |
+    | text-embedding-ada-002  | 2022-12-16   |
+    | text-davinci-003        | 2022-11-27   |
+    | curie-similarity        | 2022-04-28   |
+    | babbage-search-document | 2022-04-28   |
+    | ada-code-search-text    | 2022-04-28   |
+
+``` python
+!oai_new_func --help
+```
+
+    usage: oai_new_func [-h]
+
+    Generate minimal scaffolding for an OpenAI Plugin.
+
+    options:
+      -h, --help  show this help message and exit
