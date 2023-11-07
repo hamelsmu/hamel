@@ -26,9 +26,7 @@ def list_models(owned:str='', # Filter by who models are owned by
     models = [{'Name': m.id, 'Created Dt': _to_dt(m.created)} for m in models if not owned or owned in m.owned_by]
     if limit: models = models[:limit]
     df = pd.DataFrame(models)
-    stack_depth = len(inspect.stack())
-    if stack_depth > 3: return df
-    else: return df.to_markdown(index=False)
+    return df.to_markdown(index=False)
 
 # %% ../nbs/00_oai.ipynb 5
 def _query_git_config(key: str):
