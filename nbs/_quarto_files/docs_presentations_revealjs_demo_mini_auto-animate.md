@@ -1,7 +1,0 @@
-## 
-
-Animating content
-
-## 
-
-Animating content
