@@ -1,6 +1,7 @@
 _docs/
 _proc/
 quarto_data/
+_quarto_data/
 
 *.bak
 .gitattributes
