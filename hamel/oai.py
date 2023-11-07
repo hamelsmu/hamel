@@ -3,14 +3,14 @@
 # %% auto 0
 __all__ = ['list_models', 'create_openai_plugin_scaffolding']
 
-# %% ../nbs/00_oai.ipynb 2
+# %% ../nbs/00_oai.ipynb 3
 from datetime import datetime
 import inspect, os, json, subprocess
 import pandas as pd
 from fastcore.script import call_parse
 from urllib.parse import urljoin
 
-# %% ../nbs/00_oai.ipynb 3
+# %% ../nbs/00_oai.ipynb 4
 def _to_dt(dt:int):
     return datetime.fromtimestamp(dt).strftime('%Y-%m-%d')
 
@@ -28,7 +28,7 @@ def list_models(owned:str='', # Filter by who models are owned by
     df = pd.DataFrame(models)
     return df.to_markdown(index=False)
 
-# %% ../nbs/00_oai.ipynb 5
+# %% ../nbs/00_oai.ipynb 6
 def _query_git_config(key: str):
     try:
         result = subprocess.check_output(['git', 'config', '--get', key])
@@ -38,13 +38,13 @@ def _query_git_config(key: str):
     except subprocess.CalledProcessError:
         return None
 
-# %% ../nbs/00_oai.ipynb 7
+# %% ../nbs/00_oai.ipynb 8
 def _join_url(base, path):
     if not base.endswith('/'):
         base += '/'
     return urljoin(base, path)
 
-# %% ../nbs/00_oai.ipynb 8
+# %% ../nbs/00_oai.ipynb 9
 @call_parse
 def create_openai_plugin_scaffolding():
     "Generate minimal scaffolding for an OpenAI Plugin."
