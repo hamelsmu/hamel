@@ -5,5 +5,8 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://hamelsmu.github.io',
                 'git_url': 'https://github.com/hamelsmu/hamel',
                 'lib_path': 'hamel'},
-  'syms': { 'hamel.oai': { 'hamel.oai._to_dt': ('core.html#_to_dt', 'hamel/oai.py'),
-                           'hamel.oai.list_models': ('core.html#list_models', 'hamel/oai.py')}}}
+  'syms': { 'hamel.oai': { 'hamel.oai._join_url': ('oai.html#_join_url', 'hamel/oai.py'),
+                           'hamel.oai._query_git_config': ('oai.html#_query_git_config', 'hamel/oai.py'),
+                           'hamel.oai._to_dt': ('oai.html#_to_dt', 'hamel/oai.py'),
+                           'hamel.oai.create_openai_plugin_scaffolding': ('oai.html#create_openai_plugin_scaffolding', 'hamel/oai.py'),
+                           'hamel.oai.list_models': ('oai.html#list_models', 'hamel/oai.py')}}}
