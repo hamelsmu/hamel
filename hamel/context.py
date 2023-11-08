@@ -93,13 +93,14 @@ def _extract_links(url):
 def fetch_site_from_sitemap(url:str, # The site that you want to fetch documents from 
                             output_dir:str, # The output directory to write documents to, 
                             to_html:Param('Write output as HTML instead of markdown.', store_true),
+                            strip_html:Param('Strip any embedded HTML in markdown.', store_true)
                            ) :
     """
     Fetch content from the specified URL and save it to the given directory. Saves the content as a markdown file unless `to_html` is True. 
     """
     
     to_markdown = not to_html
-    strip_html = True if to_markdown else False
+    strip_html = strip_html if to_markdown else False
     sitemap_url = urljoin(url, '/sitemap.xml')
     domain = urlparse(url).netloc
     

@@ -1,5 +1,8 @@
 name: Deploy to GitHub Pages
 
+env:
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
 permissions:
   contents: write
   pages: write

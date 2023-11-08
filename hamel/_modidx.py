@@ -15,4 +15,5 @@ d = { 'settings': { 'branch': 'main',
                            'hamel.oai._query_git_config': ('oai.html#_query_git_config', 'hamel/oai.py'),
                            'hamel.oai._to_dt': ('oai.html#_to_dt', 'hamel/oai.py'),
                            'hamel.oai.create_openai_plugin_scaffolding': ('oai.html#create_openai_plugin_scaffolding', 'hamel/oai.py'),
-                           'hamel.oai.list_models': ('oai.html#list_models', 'hamel/oai.py')}}}
+                           'hamel.oai.list_models': ('oai.html#list_models', 'hamel/oai.py'),
+                           'hamel.oai.oai_classify': ('oai.html#oai_classify', 'hamel/oai.py')}}}
