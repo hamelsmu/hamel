@@ -2,438 +2,438 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hamel.dev/oss/opensource.html</loc>
-    <lastmod>2023-11-16T23:38:25.233Z</lastmod>
+    <lastmod>2023-11-17T18:42:28.346Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/jupyter/shortcuts.html</loc>
-    <lastmod>2023-11-16T23:38:24.320Z</lastmod>
+    <lastmod>2023-11-17T18:42:27.487Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/jupyter/Best Way To Launch Jupyter On A Remote Server.html</loc>
-    <lastmod>2023-11-16T23:38:23.435Z</lastmod>
+    <lastmod>2023-11-17T18:42:26.647Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/quarto/highlighting.html</loc>
-    <lastmod>2023-11-16T23:38:22.715Z</lastmod>
+    <lastmod>2023-11-17T18:42:25.938Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/quarto/index.html</loc>
-    <lastmod>2023-11-16T23:38:21.838Z</lastmod>
+    <lastmod>2023-11-17T18:42:25.131Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/video_editing.html</loc>
-    <lastmod>2023-11-16T23:38:21.045Z</lastmod>
+    <lastmod>2023-11-17T18:42:24.373Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/web-scraping/browser-to-python.html</loc>
-    <lastmod>2023-11-16T23:38:20.292Z</lastmod>
+    <lastmod>2023-11-17T18:42:23.663Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/prompt-eng/index.html</loc>
-    <lastmod>2023-11-16T23:38:19.464Z</lastmod>
+    <lastmod>2023-11-17T18:42:22.854Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/prompt-eng/course/02_iterative.html</loc>
-    <lastmod>2023-11-16T23:38:18.744Z</lastmod>
+    <lastmod>2023-11-17T18:42:22.128Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/prompt-eng/course/index.html</loc>
-    <lastmod>2023-11-16T23:38:17.955Z</lastmod>
+    <lastmod>2023-11-17T18:42:21.354Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/prompt-eng/course/01_guidelines.html</loc>
-    <lastmod>2023-11-16T23:38:17.153Z</lastmod>
+    <lastmod>2023-11-17T18:42:20.560Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/prompt-eng/course/07_chatbot.html</loc>
-    <lastmod>2023-11-16T23:38:16.254Z</lastmod>
+    <lastmod>2023-11-17T18:42:19.639Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/actions/index.html</loc>
-    <lastmod>2023-11-16T23:38:15.261Z</lastmod>
+    <lastmod>2023-11-17T18:42:18.620Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/linux/misc_utils.html</loc>
-    <lastmod>2023-11-16T23:38:14.535Z</lastmod>
+    <lastmod>2023-11-17T18:42:17.924Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/linux/permprocdata.html</loc>
-    <lastmod>2023-11-16T23:38:13.430Z</lastmod>
+    <lastmod>2023-11-17T18:42:16.859Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/linux/bash_scripting.html</loc>
-    <lastmod>2023-11-16T23:38:12.289Z</lastmod>
+    <lastmod>2023-11-17T18:42:15.709Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/fastai/02_cv.html</loc>
-    <lastmod>2023-11-16T23:38:10.645Z</lastmod>
+    <lastmod>2023-11-17T18:42:14.090Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/fastai/batch_predicitions.html</loc>
-    <lastmod>2023-11-16T23:38:09.535Z</lastmod>
+    <lastmod>2023-11-17T18:42:12.984Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/fastai/03_data.html</loc>
-    <lastmod>2023-11-16T23:38:08.671Z</lastmod>
+    <lastmod>2023-11-17T18:42:12.108Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/index.html</loc>
-    <lastmod>2023-11-16T23:38:07.433Z</lastmod>
+    <lastmod>2023-11-17T18:42:10.860Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/helm/index.html</loc>
-    <lastmod>2023-11-16T23:38:06.587Z</lastmod>
+    <lastmod>2023-11-17T18:42:10.037Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/helm/17-Helm Upgrade & Rollbacks.html</loc>
-    <lastmod>2023-11-16T23:38:05.562Z</lastmod>
+    <lastmod>2023-11-17T18:42:09.070Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/27-workload-placement.html</loc>
-    <lastmod>2023-11-16T23:38:04.495Z</lastmod>
+    <lastmod>2023-11-17T18:42:08.065Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/03-Secrets.html</loc>
-    <lastmod>2023-11-16T23:38:02.978Z</lastmod>
+    <lastmod>2023-11-17T18:42:06.626Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/26-cluster.html</loc>
-    <lastmod>2023-11-16T23:38:02.057Z</lastmod>
+    <lastmod>2023-11-17T18:42:05.758Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/28-auto-scaling.html</loc>
-    <lastmod>2023-11-16T23:38:01.309Z</lastmod>
+    <lastmod>2023-11-17T18:42:05.038Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/scaling/06-ReplicaSets.html</loc>
-    <lastmod>2023-11-16T23:38:00.497Z</lastmod>
+    <lastmod>2023-11-17T18:42:04.242Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/12-StatefulSet.html</loc>
-    <lastmod>2023-11-16T23:37:59.720Z</lastmod>
+    <lastmod>2023-11-17T18:42:03.495Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/storage/index.html</loc>
-    <lastmod>2023-11-16T23:37:58.604Z</lastmod>
+    <lastmod>2023-11-17T18:42:02.372Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/storage/05-Dynamic Provisioning.html</loc>
-    <lastmod>2023-11-16T23:37:57.813Z</lastmod>
+    <lastmod>2023-11-17T18:42:01.574Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/index.html</loc>
-    <lastmod>2023-11-16T23:37:56.835Z</lastmod>
+    <lastmod>2023-11-17T18:42:00.615Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/multi_container_pods/10-Downsides of MC Pods.html</loc>
-    <lastmod>2023-11-16T23:37:55.988Z</lastmod>
+    <lastmod>2023-11-17T18:41:59.792Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/multi_container_pods/08-Multi-Container-Pods.html</loc>
-    <lastmod>2023-11-16T23:37:55.269Z</lastmod>
+    <lastmod>2023-11-17T18:41:59.085Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/25-Ingress.html</loc>
-    <lastmod>2023-11-16T23:37:54.441Z</lastmod>
+    <lastmod>2023-11-17T18:41:58.269Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/Open Questions.html</loc>
-    <lastmod>2023-11-16T23:37:53.051Z</lastmod>
+    <lastmod>2023-11-17T18:41:56.930Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/security/index.html</loc>
-    <lastmod>2023-11-16T23:37:52.323Z</lastmod>
+    <lastmod>2023-11-17T18:41:56.219Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/security/29-cluster-updates.html</loc>
-    <lastmod>2023-11-16T23:37:51.558Z</lastmod>
+    <lastmod>2023-11-17T18:41:55.457Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/security/26-network-security.html</loc>
-    <lastmod>2023-11-16T23:37:50.505Z</lastmod>
+    <lastmod>2023-11-17T18:41:54.438Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/99-Random.html</loc>
-    <lastmod>2023-11-16T23:37:49.613Z</lastmod>
+    <lastmod>2023-11-17T18:41:53.602Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/29-preemption.html</loc>
-    <lastmod>2023-11-16T23:37:48.783Z</lastmod>
+    <lastmod>2023-11-17T18:41:52.821Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/19-Pod-Lifecycle.html</loc>
-    <lastmod>2023-11-16T23:37:47.699Z</lastmod>
+    <lastmod>2023-11-17T18:41:51.726Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/serving/torchserve/index.html</loc>
-    <lastmod>2023-11-16T23:37:46.584Z</lastmod>
+    <lastmod>2023-11-17T18:41:50.712Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/serving/torchserve/basic-torchserve.html</loc>
-    <lastmod>2023-11-16T23:37:45.489Z</lastmod>
+    <lastmod>2023-11-17T18:41:49.668Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/serving/tfserving/gpu.html</loc>
-    <lastmod>2023-11-16T23:37:44.373Z</lastmod>
+    <lastmod>2023-11-17T18:41:48.636Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/serving/fastapi/index.html</loc>
-    <lastmod>2023-11-16T23:37:43.240Z</lastmod>
+    <lastmod>2023-11-17T18:41:47.577Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/llm/02_langchain_connectors.html</loc>
-    <lastmod>2023-11-16T23:37:41.820Z</lastmod>
+    <lastmod>2023-11-17T18:41:46.231Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/llm/inference/big_inference.html</loc>
-    <lastmod>2023-11-16T23:37:40.977Z</lastmod>
+    <lastmod>2023-11-17T18:41:45.380Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/llm/03_estimating_vram.html</loc>
-    <lastmod>2023-11-16T23:37:35.139Z</lastmod>
+    <lastmod>2023-11-17T18:41:39.612Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/llm/index.html</loc>
-    <lastmod>2023-11-16T23:37:33.249Z</lastmod>
+    <lastmod>2023-11-17T18:41:37.634Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/docker/index.html</loc>
-    <lastmod>2023-11-16T23:37:31.965Z</lastmod>
+    <lastmod>2023-11-17T18:41:36.393Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/pandoc/index.html</loc>
-    <lastmod>2023-11-16T23:37:30.325Z</lastmod>
+    <lastmod>2023-11-17T18:41:34.826Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/how-to-learn/index.html</loc>
-    <lastmod>2023-11-16T23:37:29.577Z</lastmod>
+    <lastmod>2023-11-17T18:41:34.115Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/blog/secret.html</loc>
-    <lastmod>2023-11-16T23:37:28.741Z</lastmod>
+    <lastmod>2023-11-17T18:41:33.304Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/blog/posts/nbdev/index.html</loc>
-    <lastmod>2023-11-16T23:37:27.674Z</lastmod>
+    <lastmod>2023-11-17T18:41:32.263Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/talks.html</loc>
-    <lastmod>2023-11-16T23:37:26.545Z</lastmod>
+    <lastmod>2023-11-17T18:41:31.129Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/index.html</loc>
-    <lastmod>2023-11-16T23:37:27.086Z</lastmod>
+    <lastmod>2023-11-17T18:41:31.691Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/blog/posts/k8s/index.html</loc>
-    <lastmod>2023-11-16T23:37:28.294Z</lastmod>
+    <lastmod>2023-11-17T18:41:32.870Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/guest-blog.html</loc>
-    <lastmod>2023-11-16T23:37:29.137Z</lastmod>
+    <lastmod>2023-11-17T18:41:33.700Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/concurrency.html</loc>
-    <lastmod>2023-11-16T23:37:29.924Z</lastmod>
+    <lastmod>2023-11-17T18:41:34.443Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/cuda.html</loc>
-    <lastmod>2023-11-16T23:37:30.748Z</lastmod>
+    <lastmod>2023-11-17T18:41:35.240Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/llm/01_datasets.html</loc>
-    <lastmod>2023-11-16T23:37:32.857Z</lastmod>
+    <lastmod>2023-11-17T18:41:37.247Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/llm/04_data_cleaning.html</loc>
-    <lastmod>2023-11-16T23:37:34.678Z</lastmod>
+    <lastmod>2023-11-17T18:41:39.167Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/llm/inference/03_inference.html</loc>
-    <lastmod>2023-11-16T23:37:36.096Z</lastmod>
+    <lastmod>2023-11-17T18:41:40.513Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/llm/inference/index.html</loc>
-    <lastmod>2023-11-16T23:37:41.345Z</lastmod>
+    <lastmod>2023-11-17T18:41:45.759Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/serving/index.html</loc>
-    <lastmod>2023-11-16T23:37:42.709Z</lastmod>
+    <lastmod>2023-11-17T18:41:47.075Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/serving/tfserving/index.html</loc>
-    <lastmod>2023-11-16T23:37:43.744Z</lastmod>
+    <lastmod>2023-11-17T18:41:48.067Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/serving/tfserving/tf-serving-basics.html</loc>
-    <lastmod>2023-11-16T23:37:45.019Z</lastmod>
+    <lastmod>2023-11-17T18:41:49.232Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/serving/torchserve/hf.html</loc>
-    <lastmod>2023-11-16T23:37:46.095Z</lastmod>
+    <lastmod>2023-11-17T18:41:50.242Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/dbt/index.html</loc>
-    <lastmod>2023-11-16T23:37:47.257Z</lastmod>
+    <lastmod>2023-11-17T18:41:51.324Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/23-Logging.html</loc>
-    <lastmod>2023-11-16T23:37:48.421Z</lastmod>
+    <lastmod>2023-11-17T18:41:52.456Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/13-JobsCron.html</loc>
-    <lastmod>2023-11-16T23:37:49.220Z</lastmod>
+    <lastmod>2023-11-17T18:41:53.226Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/22-Resource-Limits.html</loc>
-    <lastmod>2023-11-16T23:37:50.103Z</lastmod>
+    <lastmod>2023-11-17T18:41:54.076Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/security/30-rbac.html</loc>
-    <lastmod>2023-11-16T23:37:51.205Z</lastmod>
+    <lastmod>2023-11-17T18:41:55.094Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/security/28-workloads.html</loc>
-    <lastmod>2023-11-16T23:37:51.952Z</lastmod>
+    <lastmod>2023-11-17T18:41:55.850Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/security/27-container-security.html</loc>
-    <lastmod>2023-11-16T23:37:52.705Z</lastmod>
+    <lastmod>2023-11-17T18:41:56.593Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/14-RolloutsRollbacks.html</loc>
-    <lastmod>2023-11-16T23:37:53.488Z</lastmod>
+    <lastmod>2023-11-17T18:41:57.334Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/multi_container_pods/09-Ambassador Sidecars.html</loc>
-    <lastmod>2023-11-16T23:37:54.812Z</lastmod>
+    <lastmod>2023-11-17T18:41:58.639Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/multi_container_pods/index.html</loc>
-    <lastmod>2023-11-16T23:37:55.641Z</lastmod>
+    <lastmod>2023-11-17T18:41:59.446Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/multi_container_pods/11-Sharing Processes in MC Pods.html</loc>
-    <lastmod>2023-11-16T23:37:56.334Z</lastmod>
+    <lastmod>2023-11-17T18:42:00.134Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/24-monitoring.html</loc>
-    <lastmod>2023-11-16T23:37:57.188Z</lastmod>
+    <lastmod>2023-11-17T18:42:00.972Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/storage/04-Basics.html</loc>
-    <lastmod>2023-11-16T23:37:58.252Z</lastmod>
+    <lastmod>2023-11-17T18:42:02.017Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/02-Basics.html</loc>
-    <lastmod>2023-11-16T23:37:59.104Z</lastmod>
+    <lastmod>2023-11-17T18:42:02.882Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/scaling/07- Scaling.html</loc>
-    <lastmod>2023-11-16T23:38:00.104Z</lastmod>
+    <lastmod>2023-11-17T18:42:03.884Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/scaling/index.html</loc>
-    <lastmod>2023-11-16T23:38:00.865Z</lastmod>
+    <lastmod>2023-11-17T18:42:04.605Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/22a-Resource-Requests.html</loc>
-    <lastmod>2023-11-16T23:38:01.686Z</lastmod>
+    <lastmod>2023-11-17T18:42:05.397Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/18-Developer.html</loc>
-    <lastmod>2023-11-16T23:38:02.518Z</lastmod>
+    <lastmod>2023-11-17T18:42:06.194Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/20-Health-Check.html</loc>
-    <lastmod>2023-11-16T23:38:03.669Z</lastmod>
+    <lastmod>2023-11-17T18:42:07.303Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/helm/16-Creating Your Own Helm Charts.html</loc>
-    <lastmod>2023-11-16T23:38:05.126Z</lastmod>
+    <lastmod>2023-11-17T18:42:08.667Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/helm/21-Testing-With-Helm.html</loc>
-    <lastmod>2023-11-16T23:38:06.207Z</lastmod>
+    <lastmod>2023-11-17T18:42:09.675Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/k8s/helm/15-Helm.html</loc>
-    <lastmod>2023-11-16T23:38:06.962Z</lastmod>
+    <lastmod>2023-11-17T18:42:10.400Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/programming-languages/index.html</loc>
-    <lastmod>2023-11-16T23:38:08.233Z</lastmod>
+    <lastmod>2023-11-17T18:42:11.663Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/fastai/01_fundamentals.html</loc>
-    <lastmod>2023-11-16T23:38:09.184Z</lastmod>
+    <lastmod>2023-11-17T18:42:12.627Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/fastai/index.html</loc>
-    <lastmod>2023-11-16T23:38:09.892Z</lastmod>
+    <lastmod>2023-11-17T18:42:13.340Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/linux/osx.html</loc>
-    <lastmod>2023-11-16T23:38:11.229Z</lastmod>
+    <lastmod>2023-11-17T18:42:14.680Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/linux/index.html</loc>
-    <lastmod>2023-11-16T23:38:12.671Z</lastmod>
+    <lastmod>2023-11-17T18:42:16.074Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/linux/cookbook.html</loc>
-    <lastmod>2023-11-16T23:38:14.087Z</lastmod>
+    <lastmod>2023-11-17T18:42:17.482Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/actions/resources.html</loc>
-    <lastmod>2023-11-16T23:38:14.880Z</lastmod>
+    <lastmod>2023-11-17T18:42:18.268Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/actions/ocotkit.html</loc>
-    <lastmod>2023-11-16T23:38:15.859Z</lastmod>
+    <lastmod>2023-11-17T18:42:19.223Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/prompt-eng/course/05_transforming.html</loc>
-    <lastmod>2023-11-16T23:38:16.666Z</lastmod>
+    <lastmod>2023-11-17T18:42:20.066Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/prompt-eng/course/03_summarizing.html</loc>
-    <lastmod>2023-11-16T23:38:17.563Z</lastmod>
+    <lastmod>2023-11-17T18:42:20.952Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/prompt-eng/course/04_inferring.html</loc>
-    <lastmod>2023-11-16T23:38:18.344Z</lastmod>
+    <lastmod>2023-11-17T18:42:21.745Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/prompt-eng/course/06_expanding.html</loc>
-    <lastmod>2023-11-16T23:38:19.117Z</lastmod>
+    <lastmod>2023-11-17T18:42:22.503Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/web-scraping/transcribe-diarize.html</loc>
-    <lastmod>2023-11-16T23:38:19.890Z</lastmod>
+    <lastmod>2023-11-17T18:42:23.261Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/web-scraping/index.html</loc>
-    <lastmod>2023-11-16T23:38:20.668Z</lastmod>
+    <lastmod>2023-11-17T18:42:24.019Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/quarto/listings-from-data.html</loc>
-    <lastmod>2023-11-16T23:38:21.459Z</lastmod>
+    <lastmod>2023-11-17T18:42:24.777Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/quarto/merging.html</loc>
-    <lastmod>2023-11-16T23:38:22.204Z</lastmod>
+    <lastmod>2023-11-17T18:42:25.489Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/jupyter/remote_browser.html</loc>
-    <lastmod>2023-11-16T23:38:23.078Z</lastmod>
+    <lastmod>2023-11-17T18:42:26.288Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/jupyter/index.html</loc>
-    <lastmod>2023-11-16T23:38:23.825Z</lastmod>
+    <lastmod>2023-11-17T18:42:27.015Z</lastmod>
   </url>
   <url>
     <loc>https://hamel.dev/notes/jupyter/Fix Jupyter CUDA cache.html</loc>
-    <lastmod>2023-11-16T23:38:24.676Z</lastmod>
+    <lastmod>2023-11-17T18:42:27.823Z</lastmod>
   </url>
 </urlset>
