@@ -1,0 +1,552 @@
+---
+title: "P3: New Frontiers in IR - Instruction Following and Reasoning"
+description: "Orion Weller on how to create retrieval models that can be prompted just like LLMs, unlocking new, more complex types of queries."
+image: orion_example/p3_images/slide_97.png
+date: 2025-07-09
+---
+
+As part of our [LLM Evals course](https://bit.ly/evals-ai), I hosted [Orion Weller](https://www.cs.jhu.edu/~orion/) for the third part of our 5-part mini-series on evaluating and optimizing RAG. Orion is a researcher at Johns Hopkins University who focuses on the intersection of reasoning and information retrieval. His talk explores how we can move beyond traditional keyword and semantic search to create retrieval systems that leverage the advanced capabilities of modern LLMs, such as instruction following and reasoning. He demonstrates that by using the right training data and techniques, we can build retrievers that understand complex, natural language queries in the same way we prompt a language model.
+
+Below is an annotated version of his presentation, with timestamped links for each slide.
+
+---
+
+ **👉 _We are teaching our last and final cohort of our [AI Evals course](https://bit.ly/evals-ai) next month_** (we have to get back to building). Here is a [35% discount code](https://bit.ly/evals-ai) for readers of this post. 👈 
+
+* * *
+
+## Annotated Presentation
+
+![](orion_example/p3_images/slide_1.png)
+
+*([Timestamp: 00:00:00](https://youtu.be/YB3b-wPbSH8?t=0s))*
+
+The title slide for Orion's talk, introducing the core themes of instruction following and reasoning in Information Retrieval (IR).
+
+![](orion_example/p3_images/slide_2.png)
+
+*([Timestamp: 00:00:07](https://youtu.be/YB3b-wPbSH8?t=7s))*
+
+Orion begins by highlighting the two capabilities that have been crucial for the success of modern language models like ChatGPT: instruction following and reasoning.
+
+![](orion_example/p3_images/slide_3.png)
+
+*([Timestamp: 00:00:20](https://youtu.be/YB3b-wPbSH8?t=20s))*
+
+The first key capability is **instruction following**. Modern LLMs excel at understanding and executing complex, multi-part instructions given in natural language. Here, the prompt asks for a haiku about information retrieval, in the style of a pirate, that also mentions "RAG".
+
+![](orion_example/p3_images/slide_4.png)
+
+*([Timestamp: 00:00:36](https://youtu.be/YB3b-wPbSH8?t=36s))*
+
+The model successfully follows all instructions, generating a thematically appropriate haiku. Orion notes that while this capability seems standard today, it's a recent advancement. A few years ago, models would not have been able to handle such a nuanced request.
+
+![](orion_example/p3_images/slide_5.png)
+
+*([Timestamp: 00:00:58](https://youtu.be/YB3b-wPbSH8?t=58s))*
+
+The second capability is **reasoning**, also known as test-time compute or "thinking." When given a query, these models don't just produce a final answer; they generate a chain of thought or intermediate "thinking tokens" that show their process. This example from OpenAI's o1 model shows it breaking down the problem of counting the letter 'r' in "strawberry" before giving the final answer.
+
+![](orion_example/p3_images/slide_6.png)
+
+*([Timestamp: 01:41](https://youtu.be/YB3b-wPbSH8?t=101s))*
+
+With these powerful LLM capabilities established, Orion poses the central question of his talk: how can we integrate these advances into the field of information retrieval?
+
+![](orion_example/p3_images/slide_7.png)
+
+*([Timestamp: 01:52](https://youtu.be/YB3b-wPbSH8?t=112s))*
+
+Orion contrasts the Google search interface from 1999...
+
+![](orion_example/p3_images/slide_8.png)
+
+*([Timestamp: 01:58](https://youtu.be/YB3b-wPbSH8?t=118s))*
+
+...with the modern Google search interface. Despite 25+ years of development, he argues the fundamental user interaction has not changed much. You still type keywords into a box, and the system performs some form of matching to return a list of websites.
+
+![](orion_example/p3_images/slide_9.png)
+
+*([Timestamp: 02:17](https://youtu.be/YB3b-wPbSH8?t=137s))*
+
+Even with advanced interfaces like SearchGPT, the underlying process is often still based on traditional search. These systems typically send the user's query to a standard search engine (like Bing or Google), retrieve the top results, and then pass those results to an LLM to generate a nice, conversational summary.
+
+![](orion_example/p3_images/slide_10.png)
+
+*([Timestamp: 02:38](https://youtu.be/YB3b-wPbSH8?t=158s))*
+
+The core mechanism of search hasn't fundamentally changed.
+
+![](orion_example/p3_images/slide_11.png)
+
+*([Timestamp: 02:46](https://youtu.be/YB3b-wPbSH8?t=166s))*
+
+Orion's key point is that even when using powerful LLMs for retrieval (e.g., training a Llama model), we are mostly just adding a "wrapper" around the results of a traditional search process. The retrieval step itself does not yet fully leverage the instruction-following or reasoning capabilities of the underlying model. The goal is to push past this and build retrieval systems that can.
+
+![](orion_example/p3_images/slide_12.png)
+
+*([Timestamp: 03:16](https://youtu.be/YB3b-wPbSH8?t=196s))*
+
+To illustrate the evolution, Orion starts with **Keyword Search**. This was the dominant paradigm in early search engines like those from 1999. It relies on exact or lexical matching of words in the query to words in the document.
+
+![](orion_example/p3_images/slide_13.png)
+
+*([Timestamp: 03:35](https://youtu.be/YB3b-wPbSH8?t=215s))*
+
+He provides a sample query and a set of three documents.
+
+![](orion_example/p3_images/slide_14.png)
+
+*([Timestamp: 03:58](https://youtu.be/YB3b-wPbSH8?t=238s))*
+
+A keyword search would successfully match the first two documents, which contain the exact words "data" and "privacy." However, it would fail to retrieve "Digital Protection" because it doesn't understand that "digital" is related to "data" and "protection" is related to "privacy."
+
+![](orion_example/p3_images/slide_15.png)
+
+*([Timestamp: 04:13](https://youtu.be/YB3b-wPbSH8?t=253s))*
+
+The next step in the evolution is **Semantic Search**. This is the standard for modern systems, where models match text based on meaning (semantic space) rather than just keywords.
+
+![](orion_example/p3_images/slide_16.png)
+
+*([Timestamp: 04:26](https://youtu.be/YB3b-wPbSH8?t=266s))*
+
+A good semantic search engine can understand synonyms and paraphrases. Therefore, it correctly identifies that "Digital Protection" is relevant to the query about "data privacy" and retrieves all three documents.
+
+![](orion_example/p3_images/slide_17.png)
+
+*([Timestamp: 04:38](https://youtu.be/YB3b-wPbSH8?t=278s))*
+
+Orion introduces the next paradigm: **Instruction-based Search**. This goes beyond semantic matching to understand and execute specific instructions *about* the documents being retrieved. In this example, the user adds the instruction "and uses extended metaphors."
+
+![](orion_example/p3_images/slide_18.png)
+
+*([Timestamp: 04:50](https://youtu.be/YB3b-wPbSH8?t=290s))*
+
+With this instruction, the search system must now perform a meta-level analysis of the documents. It needs to not only find documents about data privacy but also reason about their writing style. Only the blog post "Wolves Outside Your Data" uses a metaphor, so it is the only relevant result.
+
+![](orion_example/p3_images/slide_19.png)
+
+*([Timestamp: 05:26](https://youtu.be/YB3b-wPbSH8?t=326s))*
+
+Crucially, this type of query cannot be solved by simply reranking the results of a standard semantic search. A semantic search for "data privacy" would retrieve the three documents, but none of them are likely to contain the keyword "metaphor." The document that uses a metaphor would be missed in the initial retrieval stage, so a reranker would never even see it. This requires the retrieval model itself to understand the instruction.
+
+![](orion_example/p3_images/slide_20.png)
+
+*([Timestamp: 06:02](https://youtu.be/YB3b-wPbSH8?t=362s))*
+
+Orion pushes the concept further with **Prompt and Reasoning-based Search**. Here, the query includes not just a topic and instructions but also information about the user's intent or constraints, such as "Have really high recall or I will lose my job." A traditional search engine would mistakenly try to keyword-match "recall" or "job." A true reasoning-based retriever would understand the user's high-stakes need for comprehensive results and adjust its search strategy accordingly.
+
+![](orion_example/p3_images/slide_21.png)
+
+*([Timestamp: 06:42](https://youtu.be/YB3b-wPbSH8?t=402s))*
+
+So, what constitutes an "instruction" in the context of Information Retrieval?
+
+![](orion_example/p3_images/slide_22.png)
+
+*([Timestamp: 06:45](https://youtu.be/YB3b-wPbSH8?t=405s))*
+
+Instructions can be about document attributes. Instead of pre-processing and filtering documents by `date`, `length`, or `source`, an instruction-based retriever should be able to understand these constraints directly from the user's query (e.g., "find recent, short articles from government websites").
+
+![](orion_example/p3_images/slide_23.png)
+
+*([Timestamp: 07:03](https://youtu.be/YB3b-wPbSH8?t=423s))*
+
+They can also involve higher-level Natural Language Understanding (NLU) aspects, such as the `sentiment` or writing `style` of the content.
+
+![](orion_example/p3_images/slide_24.png)
+
+*([Timestamp: 07:15](https://youtu.be/YB3b-wPbSH8?t=435s))*
+
+Instructions can include complex `logical conditions` that combine multiple criteria (e.g., "find a positive document in the style of a pirate that is also two pages long").
+
+![](orion_example/p3_images/slide_25.png)
+
+*([Timestamp: 07:26](https://youtu.be/YB3b-wPbSH8?t=446s))*
+
+The scope of potential instructions is vast.
+
+![](orion_example/p3_images/slide_26.png)
+
+*([Timestamp: 07:31](https://youtu.be/YB3b-wPbSH8?t=451s))*
+
+Orion simplifies the concept: We are already used to prompting language models with complex, natural language requests.
+
+![](orion_example/p3_images/slide_27.png)
+
+*([Timestamp: 07:36](https://youtu.be/YB3b-wPbSH8?t=456s))*
+
+The goal is to treat our retrievers the exact same way. Since they are built on the same underlying LLM technology, they should have the same capabilities.
+
+![](orion_example/p3_images/slide_28.png)
+
+*([Timestamp: 07:45](https://youtu.be/YB3b-wPbSH8?t=465s))*
+
+Orion introduces two models he will discuss that embody these new capabilities.
+
+![](orion_example/p3_images/slide_29.png)
+
+*([Timestamp: 07:48](https://youtu.be/YB3b-wPbSH8?t=468s))*
+
+1.  **Promptriever**: A **fast embedder** that can be prompted to follow instructions during the initial, scalable retrieval stage.
+
+![](orion_example/p3_images/slide_30.png)
+
+*([Timestamp: 07:53](https://youtu.be/YB3b-wPbSH8?t=473s))*
+
+2.  **Rank1**: A **strong but slow** reranker that uses reasoning and test-time compute to make highly accurate relevance judgments.
+
+![](orion_example/p3_images/slide_31.png)
+
+*([Timestamp: 08:17](https://youtu.be/YB3b-wPbSH8?t=497s))*
+
+This slide introduces the team behind Promptriever, a collaboration between Johns Hopkins and Samaya AI.
+
+![](orion_example/p3_images/slide_32.png)
+
+*([Timestamp: 08:23](https://youtu.be/YB3b-wPbSH8?t=503s))*
+
+Orion provides a quick overview of the two main architectures for retrieval models:
+-   **Bi-Encoder**: This architecture creates separate embeddings for the query and the document. At inference time, a fast operation like cosine similarity is used to calculate the score. This is highly scalable but less expressive.
+-   **Cross-Encoder**: This architecture processes the query and document together through a single LLM to produce a score. It is much more powerful and expressive but also much slower, making it suitable for reranking a smaller set of candidate documents.
+
+![](orion_example/p3_images/slide_33.png)
+
+*([Timestamp: 09:11](https://youtu.be/YB3b-wPbSH8?t=551s))*
+
+The research question for Promptriever was: can we make the fast, scalable bi-encoder architecture take instructions?
+
+![](orivion_example/p3_images/slide_34.png)
+
+*([Timestamp: 09:27](https://youtu.be/YB3b-wPbSH8?t=567s))*
+
+The key insight was simple but powerful: the only thing needed was **training data for instruction-following**. Orion explains that existing retrieval training data (like MSMARCO, which is based on Bing search logs) doesn't contain instructions because users don't type instructions into traditional search engines. By creating this new type of data, they could teach an embedding model to follow instructions.
+
+![](orion_example/p3_images/slide_35.png)
+
+*([Timestamp: 10:07](https://youtu.be/YB3b-wPbSH8?t=607s))*
+
+This slide shows an example of the training data generation process.
+
+![](orion_example/p3_images/slide_36.png)
+
+*([Timestamp: 10:10](https://youtu.be/YB3b-wPbSH8?t=610s))*
+
+Starting with an original query and a positive document pair from an existing dataset...
+
+![](orion_example/p3_images/slide_37.png)
+
+*([Timestamp: 10:16](https://youtu.be/YB3b-wPbSH8?t=616s))*
+
+...they used an LLM to generate a synthetic instruction that explains *why* the document is relevant to the query. This creates a new training triplet: (Instruction + Query, Positive Document). This process allows the model to learn the connection between a complex instruction and a relevant document.
+
+![](orion_example/p3_images/slide_38.png)
+
+*([Timestamp: 10:33](https://youtu.be/YB3b-wPbSH8?t=633s))*
+
+The experimental settings for evaluating Promptriever.
+
+![](orion_example/p3_images/slide_39.png)
+
+*([Timestamp: 10:35](https://youtu.be/YB3b-wPbSH8?t=635s))*
+
+To ensure a fair comparison, they started with **RepLLaMA**, a LLaMA-2 model fine-tuned for retrieval, and used its exact training recipe. The only change they made was adding their new instruction-based training data.
+
+![](orion_example/p3_images/slide_40.png)
+
+*([Timestamp: 10:43](https://youtu.be/YB3b-wPbSH8?t=643s))*
+
+They evaluated the models on three types of data: the original in-domain data (MSMarco), new instruction-based data, and out-of-domain data to test generalization.
+
+![](orion_example/p3_images/slide_41.png)
+
+*([Timestamp: 11:20](https://youtu.be/YB3b-wPbSH8?t=680s))*
+
+This section details the specific evaluation datasets used.
+
+![](orion_example/p3_images/slide_42.png)
+
+*([Timestamp: 11:23](https://youtu.be/YB3b-wPbSH8?t=683s))*
+
+The first is **FollowIR**, a dataset designed to test if a model can follow updated instructions. A user issues a query, then refines it with an instruction. A good model should update its search results accordingly. The `p-MRR` metric measures this, with positive scores indicating successful instruction following and negative scores indicating the opposite.
+
+![](orion_example/p3_images/slide_43.png)
+
+*([Timestamp: 12:14](https://youtu.be/YB3b-wPbSH8?t=734s))*
+
+The second dataset is **InstructIR**. It uses 10 different personas for each query (e.g., "I'm a student," "I'm a professional") to create a variety of natural, instruction-rich search scenarios.
+
+![](orion_example/p3_images/slide_44.png)
+
+*([Timestamp: 12:30](https://youtu.be/YB3b-wPbSH8?t=750s))*
+
+This slide presents the results.
+
+![](orion_example/p3_images/slide_45.png)
+
+*([Timestamp: 12:33](https://youtu.be/YB3b-wPbSH8?t=753s))*
+
+The chart shows the performance on instruction-following tasks.
+
+![](orion_example/p3_images/slide_46.png)
+
+*([Timestamp: 12:37](https://youtu.be/YB3b-wPbSH8?t=757s))*
+
+On the FollowIR dataset, the baseline RepLLaMA scores negatively (-3.1), meaning it does the opposite of what the instruction asks. In contrast, Promptriever achieves a positive score (11.2), demonstrating for the first time that a bi-encoder embedding model can follow instructions.
+
+![](orion_example/p3_images/slide_47.png)
+
+*([Timestamp: 12:50](https://youtu.be/YB3b-wPbSH8?t=770s))*
+
+On the InstructIR benchmark, Promptriever again significantly outperforms the baseline RepLLaMA, achieving a score of 63.1 compared to 50.2.
+
+![](orion_example/p3_images/slide_48.png)
+
+*([Timestamp: 12:59](https://youtu.be/YB3b-wPbSH8?t=779s))*
+
+But what about performance on tasks *without* explicit instructions? This is a crucial test for ensuring the model hasn't lost its general-purpose retrieval capabilities.
+
+![](orion_example/p3_images/slide_49.png)
+
+*([Timestamp: 13:11](https://youtu.be/YB3b-wPbSH8?t=791s))*
+
+Two scenarios are tested: one with no prompt (the standard way of using a retriever) and one where a generic, task-agnostic prompt is added to the query.
+
+![](orion_example/p3_images/slide_50.png)
+
+*([Timestamp: 13:30](https://youtu.be/YB3b-wPbSH8?t=810s))*
+
+These are the generic prompts used, such as "Be careful when assigning relevance as your job is on the line..." The idea is to see if the instruction-trained model can leverage these general hints to improve performance, while a standard model would likely be confused or degrade.
+
+![](orion_example/p3_images/slide_51.png)
+
+*([Timestamp: 13:58](https://youtu.be/YB3b-wPbSH8?t=838s))*
+
+The results on the BEIR (out-of-domain) benchmark are telling. With no prompt, Promptriever performs slightly better than the baseline. However, when the generic prompt is added, Promptriever's performance jumps significantly (from 55.0 to 56.4), while the baseline model's performance slightly degrades. This shows that the instruction-trained model can understand and benefit from prompts, even generic ones.
+
+![](orion_example/p3_images/slide_52.png)
+
+*([Timestamp: 14:45](https://youtu.be/YB3b-wPbSH8?t=885s))*
+
+This box plot shows the standard deviation of performance across 10 different generic prompts. A lower standard deviation indicates that the model is less sensitive to the specific wording of the prompt and better understands the underlying semantic intent.
+
+![](orion_example/p3_images/slide_53.png)
+
+*([Timestamp: 14:52](https://youtu.be/YB3b-wPbSH8?t=892s))*
+
+Promptriever shows a much smaller variance compared to both the keyword-based BM25 and the standard semantic model, RepLLaMA. This demonstrates that it is more robust and truly understands the meaning of the instructions, rather than just matching keywords within the prompt.
+
+![](orion_example/p3_images/slide_54.png)
+
+*([Timestamp: 15:16](https://youtu.be/YB3b-wPbSH8?t=916s))*
+
+Orion summarizes the key takeaways for Promptriever:
+- With the right data, even fast bi-encoder retrievers can be made promptable like LLMs.
+- This unlocks new types of queries that go beyond simple semantic relevance.
+- You no longer need to be picky about keywords; you can just tell the model what you want in natural language.
+
+![](orion_example/p3_images/slide_55.png)
+
+*([Timestamp: 15:57](https://youtu.be/YB3b-wPbSH8?t=957s))*
+
+Now, the presentation shifts focus from the fast embedder (Promptriever) to the strong but slow reranker (Rank1).
+
+![](orion_example/p3_images/slide_56.png)
+
+*([Timestamp: 16:05](https://youtu.be/YB3b-wPbSH8?t=965s))*
+
+This slide introduces Rank1, a model designed to bring test-time compute (reasoning) to information retrieval.
+
+![](orion_example/p3_images/slide_57.png)
+
+*([Timestamp: 16:13](https://youtu.be/YB3b-wPbSH8?t=973s))*
+
+Rank1 is a cross-encoder model. As a reminder, this architecture processes the query and document together, allowing for deeper interaction and more nuanced relevance judgments, but at a higher computational cost.
+
+![](orion_example/p3_images/slide_58.png)
+
+*([Timestamp: 16:22](https://youtu.be/YB3b-wPbSH8?t=982s))*
+
+The goal is to leverage the power of "thinking" models for retrieval. The plot on the right, from OpenAI's o1 model, shows that as you increase the amount of test-time compute (the length of the reasoning chain), the model's accuracy on hard tasks like math problems increases dramatically. Rank1 aims to bring this same benefit to IR.
+
+![](orion_example/p3_images/slide_59.png)
+
+*([Timestamp: 17:08](https://youtu.be/YB3b-wPbSH8?t=1028s))*
+
+What does this test-time compute look like in an IR context?
+
+![](orion_example/p3_images/slide_60.png)
+
+*([Timestamp: 17:12](https://youtu.be/YB3b-wPbSH8?t=1032s))*
+
+Given a query ("do snow leopards change color") and a document, the model generates a detailed reasoning chain.
+
+![](orion_example/p3_images/slide_61.png)
+
+*([Timestamp: 17:18](https://youtu.be/YB3b-wPbSH8?t=1038s))*
+
+The model breaks down its thought process. It identifies the key term "varies" and considers its possible interpretations. It even questions its own initial assumption ("But wait, 'varies' might just mean..."), a hallmark of sophisticated reasoning. Finally, it concludes that the document is not directly relevant and outputs "false." This entire reasoning chain is generated by the model to arrive at its final score.
+
+![](orion_example/p3_images/slide_62.png)
+
+*([Timestamp: 18:01](https://youtu.be/YB3b-wPbSH8?t=1081s))*
+
+The presentation moves on to the evaluation data for Rank1.
+
+![](orion_example/p3_images/slide_63.png)
+
+*([Timestamp: 18:06](https://youtu.be/YB3b-wPbSH8?t=1086s))*
+
+The main evaluation is done on the **BRIGHT dataset**, which contains unique and challenging relevance definitions. For example, a math query might require finding a document that uses the *same theorem* to solve a different problem. A code query might ask for a document with an *alternative function*. These tasks require deep reasoning that goes far beyond keyword or simple semantic matching.
+
+![](orion_example/p3_images/slide_64.png)
+
+*([Timestamp: 18:50](https://youtu.be/YB3b-wPbSH8?t=1130s))*
+
+This slide shows the model's reasoning process for a LeetCode problem. The task is to find a similar problem. The model identifies that both problems involve a "two-pointer approach," a specific algorithmic technique. It correctly reasons that because they share this underlying algorithm, they are similar, and thus the document is relevant. Orion notes that this is an impressive level of reasoning that even a human might struggle with.
+
+![](orion_example/p3_images/slide_65.png)
+
+*([Timestamp: 19:35](https://youtu.be/YB3b-wPbSH8?t=1175s))*
+
+This slide presents the results of the evaluation.
+
+![](orion_example/p3_images/slide_66.png)
+
+*([Timestamp: 19:38](https://youtu.be/YB3b-wPbSH8?t=1178s))*
+
+Rank1 is evaluated on a broad range of tasks that test reasoning (BRIGHT), negation understanding (NevIR), and instruction following (mFollowIR).
+
+![](orion_example/p3_images/slide_67.png)
+
+*([Timestamp: 19:48](https://youtu.be/YB3b-wPbSH8?t=1188s))*
+
+An important note: the baseline model, RankLLaMA, was trained on 10 times more data than Rank1.
+
+![](orion_example/p3_images/slide_68.png)
+
+*([Timestamp: 19:55](https://youtu.be/YB3b-wPbSH8?t=1195s))*
+
+Despite being trained on less data, Rank1 significantly outperforms the baseline across all tasks. On the BRIGHT reasoning benchmark, it nearly doubles the score. On negation and instruction following, it more than doubles the score. This demonstrates the immense power of training a model to explicitly reason.
+
+![](orion_example/p3_images/slide_69.png)
+
+*([Timestamp: 20:16](https://youtu.be/YB3b-wPbSH8?t=1216s))*
+
+To isolate the impact of the reasoning chain itself, they ran an experiment with the exact same model and data, but toggled the reasoning chain on and off during training.
+
+![](orion_example/p3_images/slide_70.png)
+
+*([Timestamp: 20:24](https://youtu.be/YB3b-wPbSH8?t=1224s))*
+
+The results are stark. Simply training the model to generate the reasoning chain before the final answer results in a 10-point gain in performance. Explicitly teaching the model to "think" is hugely effective.
+
+![](orion_example/p3_images/slide_71.png)
+
+*([Timestamp: 20:33](https://youtu.be/YB3b-wPbSH8?t=1233s))*
+
+Orion shares an interesting story about evaluating on older datasets.
+
+![](orion_example/p3_images/slide_72.png)
+
+*([Timestamp: 20:44](https://youtu.be/YB3b-wPbSH8?t=1244s))*
+
+When initially testing on the DL19/DL20 datasets (from 2019), they were surprised to see very low scores. Upon investigation, they found that the number of "judged" documents their model retrieved was significantly lower than for previous models.
+
+![](orion_example/p3_images/slide_73.png)
+
+*([Timestamp: 20:52](https://youtu.be/YB3b-wPbSH8?t=1252s))*
+
+This bar chart shows the initial low scores for their model (Rank1-7B) compared to others.
+
+![](orion_example/p3_images/slide_74.png)
+
+*([Timestamp: 21:31](https://youtu.be/YB3b-wPbSH8?t=1291s))*
+
+To correct for this, the researchers manually re-judged all the unjudged documents that their models retrieved.
+
+![](orion_example/p3_images/slide_75.png)
+
+*([Timestamp: 21:38](https://youtu.be/YB3b-wPbSH8?t=1298s))*
+
+The key finding: Rank1 was finding **new, relevant documents** that older systems had completely missed. Because these documents weren't in the original judgment pool, they were incorrectly marked as irrelevant, deflating the score. After re-judging, Rank1's performance is shown to be state-of-the-art. This demonstrates that reasoning-based models have a fresh perspective and can uncover information that previous paradigms could not.
+
+![](orion_example/p3_images/slide_76.png)
+
+*([Timestamp: 21:50](https://youtu.be/YB3b-wPbSH8?t=1310s))*
+
+This also serves as a cautionary tale. The community should probably move on from older evaluation datasets like DL19, which was created before the BERT era and is biased towards the types of documents that older systems could find.
+
+![](orion_example/p3_images/slide_77.png)
+
+*([Timestamp: 22:05](https://youtu.be/YB3b-wPbSH8?t=1325s))*
+
+Orion summarizes the takeaways for Rank1:
+- Using test-time compute (thinking) creates promptable and reasoning rerankers without needing complex reinforcement learning.
+- While slower, these models are much more powerful than previous approaches.
+- The models were only trained on general web data; training on specific in-domain data would likely lead to even larger gains.
+
+![](orion_example/p3_images/slide_78.png)
+
+*([Timestamp: 22:36](https://youtu.be/YB3b-wPbSH8?t=1356s))*
+
+The overall goal is to create IR systems that work just like LLMs. By combining fast, promptable embedders (like Promptriever) with strong, reasoning-based rerankers (like Rank1), we can build systems that understand complex, multi-faceted queries and retrieve highly relevant, nuanced results.
+
+![](orion_example/p3_images/slide_79.png)
+
+*([Timestamp: 22:56](https://youtu.be/YB3b-wPbSH8?t=1376s))*
+
+What does this new paradigm mean for practitioners?
+
+![](orion_example/p3_images/slide_80.png)
+
+*([Timestamp: 23:05](https://youtu.be/YB3b-wPbSH8?t=1385s))*
+
+First, it means that new retrievers will directly benefit from advances in LLMs. As base models get better at reasoning and instruction following, our retrieval systems will inherit those capabilities.
+
+![](orion_example/p3_images/slide_81.png)
+
+*([Timestamp: 23:19](https://youtu.be/YB3b-wPbSH8?t=1399s))*
+
+Second, it means we can move towards true instruction-based search. Users can type any query they can imagine, with all its nuance and complexity, and the system will be able to understand and search for it, eliminating the need for careful keyword engineering.
+
+![](orion_example/p3_images/slide_82.png)
+
+*([Timestamp: 23:36](https://youtu.be/YB3b-wPbSH8?t=1416s))*
+
+Orion concludes by noting that all the models and data discussed are open-source and available for use under an MIT license.
+
+---
+
+## Q&A Session
+
+*   **How does Promptriever work with pre-processed documents? Does the instruction change the document embeddings?**
+    The instruction is only applied to the query, not the documents. You can batch-process and embed your entire document corpus once, just as you would with a standard retriever. At inference time, the instruction is appended to the user's query, and a single, new embedding is generated for that combined text. This new query embedding is then used to search against the static document embeddings. This design ensures scalability while still allowing for dynamic, instruction-based queries.
+
+*   **Can these instruction-following techniques be applied to cross-encoders as well?**
+    Yes, absolutely. Orion mentioned they have other work (FollowIR) that does exactly this, creating a reranker that can follow instructions.
+
+*   **Who provides the meta-instructions for search? Will it be humans or other LLMs?**
+    Orion believes it will be both. For complex, agentic RAG applications (like a "deep research system"), an LLM might generate a precise, detailed instruction to guide the retrieval step. For end-user applications, a "power user" could type in a complex natural language query with their own instructions to get exactly what they want. In some cases, a UI could even have follow-up questions to help the user build a more effective meta-prompt.
+
+*   **How does Rank1 compare to frontier reasoning models like OpenAI's o3 or Gemini?**
+    There is still a performance gap. On benchmarks where they can be compared, o3 scores around 75 while the 7B parameter Rank1 model scores around 69. However, Rank1 is much smaller and fully open-source, making it suitable for applications where you need to control the data, cost, speed, or run the model yourself. The gap exists, but the open-source model is still highly capable.
+
+*   **How can people get started with these models?**
+    Both Promptriever and Rank1 are open-source with MIT licenses. For Rank1, there is an interactive demo on Hugging Face where you can test it with your own queries. It can be used off-the-shelf with standard frameworks like vLLM.
+
+*   **Why is Rank1 easy to train with supervised fine-tuning instead of more complex methods like Reinforcement Learning (RL)?**
+    This is a key finding. The model learns the reasoning capability very effectively through simple next-token prediction on training data that includes the reasoning chains. There is no need for complex RL. Orion speculates that this distillation of reasoning is so effective that it's likely why companies like OpenAI and Google have stopped exposing their models' full reasoning chains, as it makes it too easy for others to train smaller, capable models.
+
+---
+
+ **👉 _We are teaching our last and final cohort of our [AI Evals course](https://bit.ly/evals-ai) next month_** (we have to get back to building). Here is a [35% discount code](https://bit.ly/evals-ai) for readers of this post. 👈 
+
+* * *
+
+## Video
+
+Here is the full video:
+
+{{< video https://youtu.be/YB3b-wPbSH8 >}}

@@ -2,5 +2,5 @@ website:
   sidebar:
     contents:
       - index.ipynb
-      - 00_oai.ipynb
-      - 01_context.ipynb
+      - 00_gem.ipynb
+      - annotated_blog.ipynb

@@ -22,13 +22,20 @@ licenses = {
 }
 statuses = [ '1 - Planning', '2 - Pre-Alpha', '3 - Alpha',
     '4 - Beta', '5 - Production/Stable', '6 - Mature', '7 - Inactive' ]
-py_versions = '3.6 3.7 3.8 3.9 3.10'.split()
+py_versions = '3.6 3.7 3.8 3.9 3.10 3.11 3.12'.split()
 
 requirements = shlex.split(cfg.get('requirements', ''))
 if cfg.get('pip_requirements'): requirements += shlex.split(cfg.get('pip_requirements', ''))
 min_python = cfg['min_python']
 lic = licenses.get(cfg['license'].lower(), (cfg['license'], None))
 dev_requirements = (cfg.get('dev_requirements') or '').split()
+
+package_data = dict()
+pkg_data = cfg.get('package_data', None)
+if pkg_data:
+    package_data[cfg['lib_name']] =  pkg_data.split() # split as multiple files might be listed
+# Add package data to setup_cfg for setuptools.setup(..., **setup_cfg)
+setup_cfg['package_data'] = package_data
 
 setuptools.setup(
     name = cfg['lib_name'],
