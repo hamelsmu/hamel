@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-07-09">
+<meta name="description" content="Orion Weller on how to create retrieval models that can be prompted just like LLMs, unlocking new, more complex types of queries.">
+
+<title>P3: New Frontiers in IR - Instruction Following and Reasoning – hamel</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2c2b2e643518224cf2d75a643cacf640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="P3: New Frontiers in IR - Instruction Following and Reasoning – hamel">
+<meta property="og:description" content="Orion Weller on how to create retrieval models that can be prompted just like LLMs, unlocking new, more complex types of queries.">
+<meta property="og:image" content="https://hamelsmu.github.io/hamel/orion_example/orion_example/p3_images/slide_97.png">
+<meta property="og:site_name" content="hamel">
+<meta name="twitter:title" content="P3: New Frontiers in IR - Instruction Following and Reasoning – hamel">
+<meta name="twitter:description" content="Orion Weller on how to create retrieval models that can be prompted just like LLMs, unlocking new, more complex types of queries.">
+<meta name="twitter:image" content="https://hamelsmu.github.io/hamel/orion_example/orion_example/p3_images/slide_97.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">hamel</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../orion_example/p3_orion.html">orion_example</a></li><li class="breadcrumb-item"><a href="../orion_example/p3_orion.html">P3: New Frontiers in IR - Instruction Following and Reasoning</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">hamel</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../gem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">gem</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../yt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">yt</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Writing Utils</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">orion_example</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../orion_example/p3_orion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">P3: New Frontiers in IR - Instruction Following and Reasoning</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#annotated-presentation" id="toc-annotated-presentation" class="nav-link active" data-scroll-target="#annotated-presentation">Annotated Presentation</a></li>
+  <li><a href="#qa-session" id="toc-qa-session" class="nav-link" data-scroll-target="#qa-session">Q&amp;A Session</a></li>
+  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video">Video</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/hamelsmu/hamel/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="p3_orion.md"><i class="bi bi-file-code"></i>CommonMark</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../orion_example/p3_orion.html">orion_example</a></li><li class="breadcrumb-item"><a href="../orion_example/p3_orion.html">P3: New Frontiers in IR - Instruction Following and Reasoning</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">P3: New Frontiers in IR - Instruction Following and Reasoning</h1>
+</div>
+
+<div>
+  <div class="description">
+    Orion Weller on how to create retrieval models that can be prompted just like LLMs, unlocking new, more complex types of queries.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 9, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>As part of our <a href="https://bit.ly/evals-ai">LLM Evals course</a>, I hosted <a href="https://www.cs.jhu.edu/~orion/">Orion Weller</a> for the third part of our 5-part mini-series on evaluating and optimizing RAG. Orion is a researcher at Johns Hopkins University who focuses on the intersection of reasoning and information retrieval. His talk explores how we can move beyond traditional keyword and semantic search to create retrieval systems that leverage the advanced capabilities of modern LLMs, such as instruction following and reasoning. He demonstrates that by using the right training data and techniques, we can build retrievers that understand complex, natural language queries in the same way we prompt a language model.</p>
+<p>Below is an annotated version of his presentation, with timestamped links for each slide.</p>
+<hr>
+<p><strong>👉 <em>We are teaching our last and final cohort of our <a href="https://bit.ly/evals-ai">AI Evals course</a> next month</em></strong> (we have to get back to building). Here is a <a href="https://bit.ly/evals-ai">35% discount code</a> for readers of this post. 👈</p>
+<hr>
+<section id="annotated-presentation" class="level2">
+<h2 class="anchored" data-anchor-id="annotated-presentation">Annotated Presentation</h2>
+<p><img src="orion_example/p3_images/slide_1.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=0s">Timestamp: 00:00:00</a>)</em></p>
+<p>The title slide for Orion’s talk, introducing the core themes of instruction following and reasoning in Information Retrieval (IR).</p>
+<p><img src="orion_example/p3_images/slide_2.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=7s">Timestamp: 00:00:07</a>)</em></p>
+<p>Orion begins by highlighting the two capabilities that have been crucial for the success of modern language models like ChatGPT: instruction following and reasoning.</p>
+<p><img src="orion_example/p3_images/slide_3.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=20s">Timestamp: 00:00:20</a>)</em></p>
+<p>The first key capability is <strong>instruction following</strong>. Modern LLMs excel at understanding and executing complex, multi-part instructions given in natural language. Here, the prompt asks for a haiku about information retrieval, in the style of a pirate, that also mentions “RAG”.</p>
+<p><img src="orion_example/p3_images/slide_4.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=36s">Timestamp: 00:00:36</a>)</em></p>
+<p>The model successfully follows all instructions, generating a thematically appropriate haiku. Orion notes that while this capability seems standard today, it’s a recent advancement. A few years ago, models would not have been able to handle such a nuanced request.</p>
+<p><img src="orion_example/p3_images/slide_5.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=58s">Timestamp: 00:00:58</a>)</em></p>
+<p>The second capability is <strong>reasoning</strong>, also known as test-time compute or “thinking.” When given a query, these models don’t just produce a final answer; they generate a chain of thought or intermediate “thinking tokens” that show their process. This example from OpenAI’s o1 model shows it breaking down the problem of counting the letter ‘r’ in “strawberry” before giving the final answer.</p>
+<p><img src="orion_example/p3_images/slide_6.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=101s">Timestamp: 01:41</a>)</em></p>
+<p>With these powerful LLM capabilities established, Orion poses the central question of his talk: how can we integrate these advances into the field of information retrieval?</p>
+<p><img src="orion_example/p3_images/slide_7.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=112s">Timestamp: 01:52</a>)</em></p>
+<p>Orion contrasts the Google search interface from 1999…</p>
+<p><img src="orion_example/p3_images/slide_8.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=118s">Timestamp: 01:58</a>)</em></p>
+<p>…with the modern Google search interface. Despite 25+ years of development, he argues the fundamental user interaction has not changed much. You still type keywords into a box, and the system performs some form of matching to return a list of websites.</p>
+<p><img src="orion_example/p3_images/slide_9.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=137s">Timestamp: 02:17</a>)</em></p>
+<p>Even with advanced interfaces like SearchGPT, the underlying process is often still based on traditional search. These systems typically send the user’s query to a standard search engine (like Bing or Google), retrieve the top results, and then pass those results to an LLM to generate a nice, conversational summary.</p>
+<p><img src="orion_example/p3_images/slide_10.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=158s">Timestamp: 02:38</a>)</em></p>
+<p>The core mechanism of search hasn’t fundamentally changed.</p>
+<p><img src="orion_example/p3_images/slide_11.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=166s">Timestamp: 02:46</a>)</em></p>
+<p>Orion’s key point is that even when using powerful LLMs for retrieval (e.g., training a Llama model), we are mostly just adding a “wrapper” around the results of a traditional search process. The retrieval step itself does not yet fully leverage the instruction-following or reasoning capabilities of the underlying model. The goal is to push past this and build retrieval systems that can.</p>
+<p><img src="orion_example/p3_images/slide_12.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=196s">Timestamp: 03:16</a>)</em></p>
+<p>To illustrate the evolution, Orion starts with <strong>Keyword Search</strong>. This was the dominant paradigm in early search engines like those from 1999. It relies on exact or lexical matching of words in the query to words in the document.</p>
+<p><img src="orion_example/p3_images/slide_13.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=215s">Timestamp: 03:35</a>)</em></p>
+<p>He provides a sample query and a set of three documents.</p>
+<p><img src="orion_example/p3_images/slide_14.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=238s">Timestamp: 03:58</a>)</em></p>
+<p>A keyword search would successfully match the first two documents, which contain the exact words “data” and “privacy.” However, it would fail to retrieve “Digital Protection” because it doesn’t understand that “digital” is related to “data” and “protection” is related to “privacy.”</p>
+<p><img src="orion_example/p3_images/slide_15.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=253s">Timestamp: 04:13</a>)</em></p>
+<p>The next step in the evolution is <strong>Semantic Search</strong>. This is the standard for modern systems, where models match text based on meaning (semantic space) rather than just keywords.</p>
+<p><img src="orion_example/p3_images/slide_16.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=266s">Timestamp: 04:26</a>)</em></p>
+<p>A good semantic search engine can understand synonyms and paraphrases. Therefore, it correctly identifies that “Digital Protection” is relevant to the query about “data privacy” and retrieves all three documents.</p>
+<p><img src="orion_example/p3_images/slide_17.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=278s">Timestamp: 04:38</a>)</em></p>
+<p>Orion introduces the next paradigm: <strong>Instruction-based Search</strong>. This goes beyond semantic matching to understand and execute specific instructions <em>about</em> the documents being retrieved. In this example, the user adds the instruction “and uses extended metaphors.”</p>
+<p><img src="orion_example/p3_images/slide_18.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=290s">Timestamp: 04:50</a>)</em></p>
+<p>With this instruction, the search system must now perform a meta-level analysis of the documents. It needs to not only find documents about data privacy but also reason about their writing style. Only the blog post “Wolves Outside Your Data” uses a metaphor, so it is the only relevant result.</p>
+<p><img src="orion_example/p3_images/slide_19.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=326s">Timestamp: 05:26</a>)</em></p>
+<p>Crucially, this type of query cannot be solved by simply reranking the results of a standard semantic search. A semantic search for “data privacy” would retrieve the three documents, but none of them are likely to contain the keyword “metaphor.” The document that uses a metaphor would be missed in the initial retrieval stage, so a reranker would never even see it. This requires the retrieval model itself to understand the instruction.</p>
+<p><img src="orion_example/p3_images/slide_20.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=362s">Timestamp: 06:02</a>)</em></p>
+<p>Orion pushes the concept further with <strong>Prompt and Reasoning-based Search</strong>. Here, the query includes not just a topic and instructions but also information about the user’s intent or constraints, such as “Have really high recall or I will lose my job.” A traditional search engine would mistakenly try to keyword-match “recall” or “job.” A true reasoning-based retriever would understand the user’s high-stakes need for comprehensive results and adjust its search strategy accordingly.</p>
+<p><img src="orion_example/p3_images/slide_21.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=402s">Timestamp: 06:42</a>)</em></p>
+<p>So, what constitutes an “instruction” in the context of Information Retrieval?</p>
+<p><img src="orion_example/p3_images/slide_22.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=405s">Timestamp: 06:45</a>)</em></p>
+<p>Instructions can be about document attributes. Instead of pre-processing and filtering documents by <code>date</code>, <code>length</code>, or <code>source</code>, an instruction-based retriever should be able to understand these constraints directly from the user’s query (e.g., “find recent, short articles from government websites”).</p>
+<p><img src="orion_example/p3_images/slide_23.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=423s">Timestamp: 07:03</a>)</em></p>
+<p>They can also involve higher-level Natural Language Understanding (NLU) aspects, such as the <code>sentiment</code> or writing <code>style</code> of the content.</p>
+<p><img src="orion_example/p3_images/slide_24.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=435s">Timestamp: 07:15</a>)</em></p>
+<p>Instructions can include complex <code>logical conditions</code> that combine multiple criteria (e.g., “find a positive document in the style of a pirate that is also two pages long”).</p>
+<p><img src="orion_example/p3_images/slide_25.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=446s">Timestamp: 07:26</a>)</em></p>
+<p>The scope of potential instructions is vast.</p>
+<p><img src="orion_example/p3_images/slide_26.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=451s">Timestamp: 07:31</a>)</em></p>
+<p>Orion simplifies the concept: We are already used to prompting language models with complex, natural language requests.</p>
+<p><img src="orion_example/p3_images/slide_27.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=456s">Timestamp: 07:36</a>)</em></p>
+<p>The goal is to treat our retrievers the exact same way. Since they are built on the same underlying LLM technology, they should have the same capabilities.</p>
+<p><img src="orion_example/p3_images/slide_28.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=465s">Timestamp: 07:45</a>)</em></p>
+<p>Orion introduces two models he will discuss that embody these new capabilities.</p>
+<p><img src="orion_example/p3_images/slide_29.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=468s">Timestamp: 07:48</a>)</em></p>
+<ol type="1">
+<li><strong>Promptriever</strong>: A <strong>fast embedder</strong> that can be prompted to follow instructions during the initial, scalable retrieval stage.</li>
+</ol>
+<p><img src="orion_example/p3_images/slide_30.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=473s">Timestamp: 07:53</a>)</em></p>
+<ol start="2" type="1">
+<li><strong>Rank1</strong>: A <strong>strong but slow</strong> reranker that uses reasoning and test-time compute to make highly accurate relevance judgments.</li>
+</ol>
+<p><img src="orion_example/p3_images/slide_31.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=497s">Timestamp: 08:17</a>)</em></p>
+<p>This slide introduces the team behind Promptriever, a collaboration between Johns Hopkins and Samaya AI.</p>
+<p><img src="orion_example/p3_images/slide_32.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=503s">Timestamp: 08:23</a>)</em></p>
+<p>Orion provides a quick overview of the two main architectures for retrieval models: - <strong>Bi-Encoder</strong>: This architecture creates separate embeddings for the query and the document. At inference time, a fast operation like cosine similarity is used to calculate the score. This is highly scalable but less expressive. - <strong>Cross-Encoder</strong>: This architecture processes the query and document together through a single LLM to produce a score. It is much more powerful and expressive but also much slower, making it suitable for reranking a smaller set of candidate documents.</p>
+<p><img src="orion_example/p3_images/slide_33.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=551s">Timestamp: 09:11</a>)</em></p>
+<p>The research question for Promptriever was: can we make the fast, scalable bi-encoder architecture take instructions?</p>
+<p><img src="orivion_example/p3_images/slide_34.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=567s">Timestamp: 09:27</a>)</em></p>
+<p>The key insight was simple but powerful: the only thing needed was <strong>training data for instruction-following</strong>. Orion explains that existing retrieval training data (like MSMARCO, which is based on Bing search logs) doesn’t contain instructions because users don’t type instructions into traditional search engines. By creating this new type of data, they could teach an embedding model to follow instructions.</p>
+<p><img src="orion_example/p3_images/slide_35.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=607s">Timestamp: 10:07</a>)</em></p>
+<p>This slide shows an example of the training data generation process.</p>
+<p><img src="orion_example/p3_images/slide_36.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=610s">Timestamp: 10:10</a>)</em></p>
+<p>Starting with an original query and a positive document pair from an existing dataset…</p>
+<p><img src="orion_example/p3_images/slide_37.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=616s">Timestamp: 10:16</a>)</em></p>
+<p>…they used an LLM to generate a synthetic instruction that explains <em>why</em> the document is relevant to the query. This creates a new training triplet: (Instruction + Query, Positive Document). This process allows the model to learn the connection between a complex instruction and a relevant document.</p>
+<p><img src="orion_example/p3_images/slide_38.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=633s">Timestamp: 10:33</a>)</em></p>
+<p>The experimental settings for evaluating Promptriever.</p>
+<p><img src="orion_example/p3_images/slide_39.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=635s">Timestamp: 10:35</a>)</em></p>
+<p>To ensure a fair comparison, they started with <strong>RepLLaMA</strong>, a LLaMA-2 model fine-tuned for retrieval, and used its exact training recipe. The only change they made was adding their new instruction-based training data.</p>
+<p><img src="orion_example/p3_images/slide_40.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=643s">Timestamp: 10:43</a>)</em></p>
+<p>They evaluated the models on three types of data: the original in-domain data (MSMarco), new instruction-based data, and out-of-domain data to test generalization.</p>
+<p><img src="orion_example/p3_images/slide_41.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=680s">Timestamp: 11:20</a>)</em></p>
+<p>This section details the specific evaluation datasets used.</p>
+<p><img src="orion_example/p3_images/slide_42.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=683s">Timestamp: 11:23</a>)</em></p>
+<p>The first is <strong>FollowIR</strong>, a dataset designed to test if a model can follow updated instructions. A user issues a query, then refines it with an instruction. A good model should update its search results accordingly. The <code>p-MRR</code> metric measures this, with positive scores indicating successful instruction following and negative scores indicating the opposite.</p>
+<p><img src="orion_example/p3_images/slide_43.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=734s">Timestamp: 12:14</a>)</em></p>
+<p>The second dataset is <strong>InstructIR</strong>. It uses 10 different personas for each query (e.g., “I’m a student,” “I’m a professional”) to create a variety of natural, instruction-rich search scenarios.</p>
+<p><img src="orion_example/p3_images/slide_44.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=750s">Timestamp: 12:30</a>)</em></p>
+<p>This slide presents the results.</p>
+<p><img src="orion_example/p3_images/slide_45.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=753s">Timestamp: 12:33</a>)</em></p>
+<p>The chart shows the performance on instruction-following tasks.</p>
+<p><img src="orion_example/p3_images/slide_46.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=757s">Timestamp: 12:37</a>)</em></p>
+<p>On the FollowIR dataset, the baseline RepLLaMA scores negatively (-3.1), meaning it does the opposite of what the instruction asks. In contrast, Promptriever achieves a positive score (11.2), demonstrating for the first time that a bi-encoder embedding model can follow instructions.</p>
+<p><img src="orion_example/p3_images/slide_47.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=770s">Timestamp: 12:50</a>)</em></p>
+<p>On the InstructIR benchmark, Promptriever again significantly outperforms the baseline RepLLaMA, achieving a score of 63.1 compared to 50.2.</p>
+<p><img src="orion_example/p3_images/slide_48.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=779s">Timestamp: 12:59</a>)</em></p>
+<p>But what about performance on tasks <em>without</em> explicit instructions? This is a crucial test for ensuring the model hasn’t lost its general-purpose retrieval capabilities.</p>
+<p><img src="orion_example/p3_images/slide_49.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=791s">Timestamp: 13:11</a>)</em></p>
+<p>Two scenarios are tested: one with no prompt (the standard way of using a retriever) and one where a generic, task-agnostic prompt is added to the query.</p>
+<p><img src="orion_example/p3_images/slide_50.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=810s">Timestamp: 13:30</a>)</em></p>
+<p>These are the generic prompts used, such as “Be careful when assigning relevance as your job is on the line…” The idea is to see if the instruction-trained model can leverage these general hints to improve performance, while a standard model would likely be confused or degrade.</p>
+<p><img src="orion_example/p3_images/slide_51.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=838s">Timestamp: 13:58</a>)</em></p>
+<p>The results on the BEIR (out-of-domain) benchmark are telling. With no prompt, Promptriever performs slightly better than the baseline. However, when the generic prompt is added, Promptriever’s performance jumps significantly (from 55.0 to 56.4), while the baseline model’s performance slightly degrades. This shows that the instruction-trained model can understand and benefit from prompts, even generic ones.</p>
+<p><img src="orion_example/p3_images/slide_52.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=885s">Timestamp: 14:45</a>)</em></p>
+<p>This box plot shows the standard deviation of performance across 10 different generic prompts. A lower standard deviation indicates that the model is less sensitive to the specific wording of the prompt and better understands the underlying semantic intent.</p>
+<p><img src="orion_example/p3_images/slide_53.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=892s">Timestamp: 14:52</a>)</em></p>
+<p>Promptriever shows a much smaller variance compared to both the keyword-based BM25 and the standard semantic model, RepLLaMA. This demonstrates that it is more robust and truly understands the meaning of the instructions, rather than just matching keywords within the prompt.</p>
+<p><img src="orion_example/p3_images/slide_54.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=916s">Timestamp: 15:16</a>)</em></p>
+<p>Orion summarizes the key takeaways for Promptriever: - With the right data, even fast bi-encoder retrievers can be made promptable like LLMs. - This unlocks new types of queries that go beyond simple semantic relevance. - You no longer need to be picky about keywords; you can just tell the model what you want in natural language.</p>
+<p><img src="orion_example/p3_images/slide_55.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=957s">Timestamp: 15:57</a>)</em></p>
+<p>Now, the presentation shifts focus from the fast embedder (Promptriever) to the strong but slow reranker (Rank1).</p>
+<p><img src="orion_example/p3_images/slide_56.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=965s">Timestamp: 16:05</a>)</em></p>
+<p>This slide introduces Rank1, a model designed to bring test-time compute (reasoning) to information retrieval.</p>
+<p><img src="orion_example/p3_images/slide_57.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=973s">Timestamp: 16:13</a>)</em></p>
+<p>Rank1 is a cross-encoder model. As a reminder, this architecture processes the query and document together, allowing for deeper interaction and more nuanced relevance judgments, but at a higher computational cost.</p>
+<p><img src="orion_example/p3_images/slide_58.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=982s">Timestamp: 16:22</a>)</em></p>
+<p>The goal is to leverage the power of “thinking” models for retrieval. The plot on the right, from OpenAI’s o1 model, shows that as you increase the amount of test-time compute (the length of the reasoning chain), the model’s accuracy on hard tasks like math problems increases dramatically. Rank1 aims to bring this same benefit to IR.</p>
+<p><img src="orion_example/p3_images/slide_59.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1028s">Timestamp: 17:08</a>)</em></p>
+<p>What does this test-time compute look like in an IR context?</p>
+<p><img src="orion_example/p3_images/slide_60.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1032s">Timestamp: 17:12</a>)</em></p>
+<p>Given a query (“do snow leopards change color”) and a document, the model generates a detailed reasoning chain.</p>
+<p><img src="orion_example/p3_images/slide_61.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1038s">Timestamp: 17:18</a>)</em></p>
+<p>The model breaks down its thought process. It identifies the key term “varies” and considers its possible interpretations. It even questions its own initial assumption (“But wait, ‘varies’ might just mean…”), a hallmark of sophisticated reasoning. Finally, it concludes that the document is not directly relevant and outputs “false.” This entire reasoning chain is generated by the model to arrive at its final score.</p>
+<p><img src="orion_example/p3_images/slide_62.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1081s">Timestamp: 18:01</a>)</em></p>
+<p>The presentation moves on to the evaluation data for Rank1.</p>
+<p><img src="orion_example/p3_images/slide_63.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1086s">Timestamp: 18:06</a>)</em></p>
+<p>The main evaluation is done on the <strong>BRIGHT dataset</strong>, which contains unique and challenging relevance definitions. For example, a math query might require finding a document that uses the <em>same theorem</em> to solve a different problem. A code query might ask for a document with an <em>alternative function</em>. These tasks require deep reasoning that goes far beyond keyword or simple semantic matching.</p>
+<p><img src="orion_example/p3_images/slide_64.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1130s">Timestamp: 18:50</a>)</em></p>
+<p>This slide shows the model’s reasoning process for a LeetCode problem. The task is to find a similar problem. The model identifies that both problems involve a “two-pointer approach,” a specific algorithmic technique. It correctly reasons that because they share this underlying algorithm, they are similar, and thus the document is relevant. Orion notes that this is an impressive level of reasoning that even a human might struggle with.</p>
+<p><img src="orion_example/p3_images/slide_65.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1175s">Timestamp: 19:35</a>)</em></p>
+<p>This slide presents the results of the evaluation.</p>
+<p><img src="orion_example/p3_images/slide_66.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1178s">Timestamp: 19:38</a>)</em></p>
+<p>Rank1 is evaluated on a broad range of tasks that test reasoning (BRIGHT), negation understanding (NevIR), and instruction following (mFollowIR).</p>
+<p><img src="orion_example/p3_images/slide_67.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1188s">Timestamp: 19:48</a>)</em></p>
+<p>An important note: the baseline model, RankLLaMA, was trained on 10 times more data than Rank1.</p>
+<p><img src="orion_example/p3_images/slide_68.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1195s">Timestamp: 19:55</a>)</em></p>
+<p>Despite being trained on less data, Rank1 significantly outperforms the baseline across all tasks. On the BRIGHT reasoning benchmark, it nearly doubles the score. On negation and instruction following, it more than doubles the score. This demonstrates the immense power of training a model to explicitly reason.</p>
+<p><img src="orion_example/p3_images/slide_69.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1216s">Timestamp: 20:16</a>)</em></p>
+<p>To isolate the impact of the reasoning chain itself, they ran an experiment with the exact same model and data, but toggled the reasoning chain on and off during training.</p>
+<p><img src="orion_example/p3_images/slide_70.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1224s">Timestamp: 20:24</a>)</em></p>
+<p>The results are stark. Simply training the model to generate the reasoning chain before the final answer results in a 10-point gain in performance. Explicitly teaching the model to “think” is hugely effective.</p>
+<p><img src="orion_example/p3_images/slide_71.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1233s">Timestamp: 20:33</a>)</em></p>
+<p>Orion shares an interesting story about evaluating on older datasets.</p>
+<p><img src="orion_example/p3_images/slide_72.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1244s">Timestamp: 20:44</a>)</em></p>
+<p>When initially testing on the DL19/DL20 datasets (from 2019), they were surprised to see very low scores. Upon investigation, they found that the number of “judged” documents their model retrieved was significantly lower than for previous models.</p>
+<p><img src="orion_example/p3_images/slide_73.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1252s">Timestamp: 20:52</a>)</em></p>
+<p>This bar chart shows the initial low scores for their model (Rank1-7B) compared to others.</p>
+<p><img src="orion_example/p3_images/slide_74.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1291s">Timestamp: 21:31</a>)</em></p>
+<p>To correct for this, the researchers manually re-judged all the unjudged documents that their models retrieved.</p>
+<p><img src="orion_example/p3_images/slide_75.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1298s">Timestamp: 21:38</a>)</em></p>
+<p>The key finding: Rank1 was finding <strong>new, relevant documents</strong> that older systems had completely missed. Because these documents weren’t in the original judgment pool, they were incorrectly marked as irrelevant, deflating the score. After re-judging, Rank1’s performance is shown to be state-of-the-art. This demonstrates that reasoning-based models have a fresh perspective and can uncover information that previous paradigms could not.</p>
+<p><img src="orion_example/p3_images/slide_76.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1310s">Timestamp: 21:50</a>)</em></p>
+<p>This also serves as a cautionary tale. The community should probably move on from older evaluation datasets like DL19, which was created before the BERT era and is biased towards the types of documents that older systems could find.</p>
+<p><img src="orion_example/p3_images/slide_77.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1325s">Timestamp: 22:05</a>)</em></p>
+<p>Orion summarizes the takeaways for Rank1: - Using test-time compute (thinking) creates promptable and reasoning rerankers without needing complex reinforcement learning. - While slower, these models are much more powerful than previous approaches. - The models were only trained on general web data; training on specific in-domain data would likely lead to even larger gains.</p>
+<p><img src="orion_example/p3_images/slide_78.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1356s">Timestamp: 22:36</a>)</em></p>
+<p>The overall goal is to create IR systems that work just like LLMs. By combining fast, promptable embedders (like Promptriever) with strong, reasoning-based rerankers (like Rank1), we can build systems that understand complex, multi-faceted queries and retrieve highly relevant, nuanced results.</p>
+<p><img src="orion_example/p3_images/slide_79.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1376s">Timestamp: 22:56</a>)</em></p>
+<p>What does this new paradigm mean for practitioners?</p>
+<p><img src="orion_example/p3_images/slide_80.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1385s">Timestamp: 23:05</a>)</em></p>
+<p>First, it means that new retrievers will directly benefit from advances in LLMs. As base models get better at reasoning and instruction following, our retrieval systems will inherit those capabilities.</p>
+<p><img src="orion_example/p3_images/slide_81.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1399s">Timestamp: 23:19</a>)</em></p>
+<p>Second, it means we can move towards true instruction-based search. Users can type any query they can imagine, with all its nuance and complexity, and the system will be able to understand and search for it, eliminating the need for careful keyword engineering.</p>
+<p><img src="orion_example/p3_images/slide_82.png" class="img-fluid"></p>
+<p><em>(<a href="https://youtu.be/YB3b-wPbSH8?t=1416s">Timestamp: 23:36</a>)</em></p>
+<p>Orion concludes by noting that all the models and data discussed are open-source and available for use under an MIT license.</p>
+<hr>
+</section>
+<section id="qa-session" class="level2">
+<h2 class="anchored" data-anchor-id="qa-session">Q&amp;A Session</h2>
+<ul>
+<li><p><strong>How does Promptriever work with pre-processed documents? Does the instruction change the document embeddings?</strong> The instruction is only applied to the query, not the documents. You can batch-process and embed your entire document corpus once, just as you would with a standard retriever. At inference time, the instruction is appended to the user’s query, and a single, new embedding is generated for that combined text. This new query embedding is then used to search against the static document embeddings. This design ensures scalability while still allowing for dynamic, instruction-based queries.</p></li>
+<li><p><strong>Can these instruction-following techniques be applied to cross-encoders as well?</strong> Yes, absolutely. Orion mentioned they have other work (FollowIR) that does exactly this, creating a reranker that can follow instructions.</p></li>
+<li><p><strong>Who provides the meta-instructions for search? Will it be humans or other LLMs?</strong> Orion believes it will be both. For complex, agentic RAG applications (like a “deep research system”), an LLM might generate a precise, detailed instruction to guide the retrieval step. For end-user applications, a “power user” could type in a complex natural language query with their own instructions to get exactly what they want. In some cases, a UI could even have follow-up questions to help the user build a more effective meta-prompt.</p></li>
+<li><p><strong>How does Rank1 compare to frontier reasoning models like OpenAI’s o3 or Gemini?</strong> There is still a performance gap. On benchmarks where they can be compared, o3 scores around 75 while the 7B parameter Rank1 model scores around 69. However, Rank1 is much smaller and fully open-source, making it suitable for applications where you need to control the data, cost, speed, or run the model yourself. The gap exists, but the open-source model is still highly capable.</p></li>
+<li><p><strong>How can people get started with these models?</strong> Both Promptriever and Rank1 are open-source with MIT licenses. For Rank1, there is an interactive demo on Hugging Face where you can test it with your own queries. It can be used off-the-shelf with standard frameworks like vLLM.</p></li>
+<li><p><strong>Why is Rank1 easy to train with supervised fine-tuning instead of more complex methods like Reinforcement Learning (RL)?</strong> This is a key finding. The model learns the reasoning capability very effectively through simple next-token prediction on training data that includes the reasoning chains. There is no need for complex RL. Orion speculates that this distillation of reasoning is so effective that it’s likely why companies like OpenAI and Google have stopped exposing their models’ full reasoning chains, as it makes it too easy for others to train smaller, capable models.</p></li>
+</ul>
+<hr>
+<p><strong>👉 <em>We are teaching our last and final cohort of our <a href="https://bit.ly/evals-ai">AI Evals course</a> next month</em></strong> (we have to get back to building). Here is a <a href="https://bit.ly/evals-ai">35% discount code</a> for readers of this post. 👈</p>
+<hr>
+</section>
+<section id="video" class="level2">
+<h2 class="anchored" data-anchor-id="video">Video</h2>
+<p>Here is the full video:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/YB3b-wPbSH8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/hamelsmu\.github\.io\/hamel");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/hamelsmu/hamel/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
