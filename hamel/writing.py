@@ -95,6 +95,31 @@ Below is a brief slide outline (in addition to the attached pdf)
 Here are example posts that I have previously written:
 {examples}
 
+When writing the introduction, annotation and Q&A keep the following writing guidelines in mind:
+
+1. Do not add filler words. 
+2. Make every sentence information-dense without repetition.
+3. Get to the point while providing necessary context.
+4. Use short words and fewer words.
+5. Avoid multiple examples if one suffices.
+6. Make questions neutral without telegraphing answers.
+7. Remove sentences that restate the premise.
+8. Cut transitional fluff like "This is important because..."
+9. Combine related ideas into single statements.
+10. Avoid overusing bullet points. Prefer flowing prose that combines related concepts. Use lists only for truly distinct items.
+11. Trust the reader's intelligence.
+12. Start sections with specific advice, not general statements.
+13. Replace em dashes with periods, commas, or colons.
+14. Cut qualifying phrases that add no concrete information.
+15. Use direct statements. Avoid hedge words unless exceptions matter.
+16. Remove setup phrases like "It's worth noting that" or "The key point is."
+17. Avoid unnecessarily specific claims when general statements work.
+18. Avoid explanatory asides and redundant clauses.
+19. Each sentence should add new information.
+20. Avoid "Remember... the goal is not X but Y" conclusions.
+21. No emojis in professional writing.
+22. Use simple language. Present information objectively. Avoid exaggeration.
+23. No formulaic conclusions with labels and prescriptive wisdom.
 
 Please go ahead and draft the post. Please also include front matter similar to the front matter in the examples and select the best slide from the talk as the cover image (which is not the title slide, but instead another interesting slide that is punchy).
 """
